@@ -1,0 +1,83 @@
+sign bit;the leftmost bit in a floating-point number, indicating its positive (0) or negative (1) value
+mantissa (or significand);the bits in a floating-point number representing the precise fractional part, excluding the implicit leading 1 bit
+exponent;the bits in a floating-point number determining the scale of the number (e.g., 2^exponent)
+exponent bias;an offset value applied to the exponent to allow for representation of both positive and negative exponents in a biased manner
+strides in NumPy;describe the number of bytes to jump to get to the next element in each dimension of an array
+C ordering (row-major);arrays are stored in memory row by row, with the rightmost index changing fastest
+Fortran ordering (column-major);arrays are stored in memory column by column, with the leftmost index changing fastest
+dope vector;contains information about an array's shape, strides, data type, and other metadata
+advantages of C ordering;efficient for row-wise traversal and matches how most programming languages access arrays
+advantages of Fortran ordering;efficient for column-wise traversal, suits mathematical and engineering computations
+dope vector for a 3D array;example: shape=(3, 4, 5), strides=(20, 5, 1), indicating how to move in memory for each dimension
+effect of changing strides on array iteration;changing strides can modify the order in which array elements are accessed in memory
+C ordering in nested arrays;innermost arrays follow C ordering, useful for 2D arrays of varying sizes within a 3D array
+Fortran ordering in nested arrays;innermost arrays follow Fortran ordering, beneficial for numerical simulations requiring column-wise computations
+Illiffe vector;alternative to dope vectors, representing shape and strides as nested lists
+IEEE 754 exceptions;special conditions that occur during floating-point arithmetic operations
+overflow;occurs when a result is too large to be represented within the finite range of a floating-point format
+underflow;occurs when a result is too small to be represented as a normalized floating-point number
+division by zero;occurs when attempting to divide a number by zero, resulting in an undefined mathematical operation
+invalid operation;occurs for operations like square root of a negative number, generating a NaN (Not a Number) result
+trapping exceptions;IEEE 754 allows exceptions to be trapped, enabling custom handling of exceptional conditions
+setting traps in IEEE 754;specifies whether exceptions like overflow, underflow, or invalid operation should trigger an interrupt or be ignored
+handling NaN (Not a Number);NaN is a special value representing undefined or unrepresentable results, propagating through most operations
+handling Inf (Infinity);Inf represents positive or negative infinity, occurring as a result of overflow or division by zero
+detecting and avoiding NaN;isnan() function checks if a value is NaN, helping identify and handle undefined computations
+using Inf in computations;Inf can be used in mathematical operations, providing a placeholder for extremely large or small values
+NaN (Not a Number);a special floating-point value representing undefined or unrepresentable results
+propagation of NaN;any arithmetic operation with NaN as an operand results in NaN, making it propagate through calculations
+NaN in comparisons;any comparison involving NaN, including equality checks, results in false, ensuring consistency in comparisons
+isnan() function;checks if a value is NaN, returning True if it's NaN and False otherwise
+NaN as a placeholder;NaN can be used to indicate missing or undefined data in computations and data analysis
+handling NaN in data cleaning;NaN values in datasets can be replaced, removed, or interpolated to prepare data for analysis
+IEEE 754 standard for NaN;defines the bit pattern used to represent NaN, ensuring consistent handling across different systems
+NaN in mathematical functions;many functions return NaN for undefined inputs, allowing continued execution of programs
+NaN in statistical calculations;NaN values in datasets can be skipped during statistical calculations to obtain meaningful results
+NaN (Not a Number) bit pattern;In 64-bit float: [sign][all one exponent][non-zero mantiassa]
+Inf (Infinity) bit pattern;In 64-bit float: [sign][all one exponent][all zero mantiassa]
+Positive zero bit pattern;In 64-bit float: [0][all zeros]
+Negative zero bit pattern;In 64-bit float: [1][all-zeros]
+Signed zero issue;Arises due to the distinction between positive and negative zero, impacting certain calculations
+Bit pattern for signaling NaN;Specific bit patterns in NaN are designated for signaling NaNs, indicating errors when used in operations
+Bit pattern for quiet NaN;Quiet NaNs allow operations to continue without raising exceptions, ensuring smooth program execution
+Reshape for Promotion;Use np.reshape() to change the shape of an array, promoting or demoting dimensions as needed.
+Squeeze for Reduction;Use np.squeeze() to remove single-dimensional entries from the shape of an array, reducing its dimensions.
+Newaxis for Promotion;Use np.newaxis or None to add new dimensions, promoting arrays to higher dimensions.
+None for Promotion;Using None in slicing/indexing adds a new axis, promoting arrays to higher dimensions.
+Ravel for Flattening;Use np.ravel() to flatten multi-dimensional arrays into one-dimensional arrays.
+Flatten for Flattening;Use np.ndarray.flatten() to flatten arrays into one-dimensional arrays (returns a copy).
+Einsum Function;np.einsum() allows for efficient contraction and summation of multidimensional arrays using Einstein's summation convention.
+Einsum Notation;Uses subscripts to define input and output array dimensions, facilitating complex array operations in a concise manner.
+Einsum Example;Example: np.einsum('ij,jk->ik', A, B) performs matrix multiplication of A and B, resulting in a new array C.
+Swapaxes Function;np.swapaxes() swaps two axes of an array, changing the shape and layout of the array in memory.
+Swapaxes Example;Example: np.swapaxes(arr, axis1, axis2) swaps the specified axes (axis1 and axis2) of the input array.
+Benefits of Einsum;Enables efficient handling of complex array operations, reducing the need for explicit loops and intermediate arrays.
+Machine Epsilon;Machine epsilon (eps) is the smallest positive floating-point number such that 1.0 + eps != 1.0.
+Double Precision Machine Epsilon;For IEEE 754 double precision (float64), machine epsilon is approximately 2.220446049250313e-16.
+Single Precision Machine Epsilon;For IEEE 754 single precision (float32), machine epsilon is approximately 1.19209290e-07.
+IEEE 754 Roundoff Guarantees;In IEEE 754 arithmetic, roundoff errors are guaranteed to be less than 0.5 ulps (units in the last place) for basic operations.
+Roundoff Guarantee Example;For addition, the result is correctly rounded to the nearest representable floating-point number within 0.5 ulps of the exact result.
+IEEE 754 Rounding Modes;IEEE 754 defines different rounding modes: round to nearest, round towards positive infinity, round towards negative infinity, and round towards zero.
+ULPs (Units in the Last Place);ULPs represent the gap between adjacent floating-point numbers in a numerical system.
+Significance of ULPs;ULPs indicate the precision of a floating-point number relative to its magnitude.
+Floating-Point Numbers and ULPs;Two floating-point numbers that differ by 1 ULP have the smallest possible difference.
+np.nextafter Function;In NumPy, np.nextafter(x, y) returns the next representable floating-point number after x in the direction of y.
+np.nextafter Example;Example: np.nextafter(1.0, 2.0) returns the next representable floating-point number greater than 1.0.
+np.nextafter Usage;Useful for exploring floating-point number representation and analyzing precision in numerical algorithms.
+Avoiding Catastrophic Cancellation;By understanding ULPs, programmers can mitigate the effects of catastrophic cancellation in numerical computations.
+Comparing Floating-Point Numbers;When comparing floating-point numbers, consider a tolerance in ULPs rather than an absolute tolerance to account for precision differences.
+Time complexity of transpose; O(1) 
+you are;a space cadet
+Square Root of a Negative Number;Taking the square root of a negative number in real arithmetic results in NaN.
+Zero Divided by Zero;Zero divided by zero is an undefined operation, resulting in NaN.
+Infinity Minus Infinity;Performing subtraction between positive and negative infinity results in NaN.
+NaN as an Operand;Any arithmetic operation involving NaN as an operand results in NaN.
+0.0 * Infinity;Multiplying zero by positive or negative infinity results in NaN.
+Infinity / Infinity;Dividing positive or negative infinity by itself results in NaN.
+Infinity * Zero;Multiplying positive or negative infinity by zero results in NaN.
+Overflow Exception;If untrapped, overflow  results in positive or negative infinity (Inf).
+Underflow Exception;If untrapped, underflow results in positive/negative zero.
+Division by Zero Exception;If untrapped, division by zero results in positive or negative infinity (Inf).
+Invalid Operation Exception;If untrapped, invalid operations like square root of a negative number result in NaN.
+Inexact Exception;A result that is not exact, typically due to limited precision or rounding, but not exceptional. Results in nearest float. 
+

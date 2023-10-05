@@ -1,0 +1,58 @@
+vectors in R^N; ordered arrays of N real numbers representing points in N-dimensional space
+vector addition (v + w); component-wise addition of corresponding elements of vectors v and w
+scalar multiplication (c * v); multiplication of each element of vector v by scalar constant c
+norm; length of a vector -- a defined property
+distance; norm of a difference of two vectors norm(A-B) or norm(A+(-1*B))
+inner product (dot product) of vectors v and w; sum of the products of corresponding elements of v and w
+L1 norm of vector v; sum of the absolute values of its elements: ||v||_1 = |v_1| + |v_2| + ... + |v_N|
+L2 norm of vector v; square root of the sum of the squares of its elements: ||v||_2 = sqrt(v_1^2 + v_2^2 + ... + v_N^2)
+Lp norm of vector v; generalization of L2 norm: ||v||_p = (|v_1|^p + |v_2|^p + ... + |v_N|^p)^(1/p)
+L-infinity norm of vector v; maximum absolute value of its elements: ||v||_∞ = max(|v_1|, |v_2|, ..., |v_N|)
+Curse of Dimensionality; phenomenon where high-dimensional spaces exhibit counterintuitive behaviors, especially increasing sparsity
+Density in shells; in high dimensions, most of the volume of a hypersphere is concentrated near its surface
+Volume of unit ball in high-d space; decreases exponentially with dimension, leading to sparse sampling
+Near-orthogonality of all vectors; in high-dimensional spaces, most vectors are nearly orthogonal to each other
+Exponential increase in distance; as dimensionality increases, points become exponentially farther apart
+Increased sparsity of data; in high-dimensional spaces, data points become sparse, making analysis and visualization challenging
+Difficulty in visualizing and interpreting data; high-dimensional data is difficult to represent visually and comprehend intuitively
+Matrix Addition (A + B); sum of corresponding elements of matrices A and B
+Scalar Multiplication (c * A); multiplication of each element of matrix A by scalar constant c
+Matrix Multiplication (AB); operation resulting from composing linear maps represented by matrices A and B
+Matrix Composition and Function Composition; matrix multiplication corresponds to composition of linear functions
+Matrix Dimensions (NxM); notation where N represents the number of rows and M represents the number of columns in a matrix
+Matrix-Vector Multiplication (Av); result of applying linear transformation represented by matrix A to vector v
+Transpose of a Matrix (A^T); operation flipping rows and columns of matrix A
+(AB)^T = B^T A^T; transposition property of the product of matrices
+Properties of Linear Maps; linearity, preservation of origin, lines, and planes are fundamental properties of linear transformations
+Combining Linear Maps; all matrix operations (addition, multiplication, etc.) can be seen as combinations of rotations, scales, and translations
+Definition of Linearity; linear maps satisfy the properties of additivity and scalar multiplication
+Additivity Property of Linear Maps; for any vectors v and w, T(v + w) = T(v) + T(w)
+Scalar Multiplication Property of Linear Maps; for any scalar c and vector v, T(cv) = cT(v)
+Preservation of Origin; linear maps always map the origin to the origin: T(0) = 0
+Preservation of Lines; linear maps transform lines in the input space to lines in the output space
+Definition of Matrices in R^(MxN); matrices are rectangular arrays of real numbers with M rows and N columns
+Matrix Multiplication (AB); operation resulting in a new matrix C, where C[i][j] is the dot product of the ith row of A and jth column of B
+Associative Property of Matrix Multiplication; (AB)C = A(BC), allowing the grouping of matrix multiplication operations
+Non-Commutative Property of Matrix Multiplication; in general, AB ≠ BA for matrices A and B
+Identity Matrix (I); a square matrix where all elements on the main diagonal are 1 and all other elements are 0; AI = A and IA = A
+Effect of Multiplying by Identity Matrix; any matrix multiplied by the identity matrix remains unchanged
+Zero Matrix (0); a matrix where all elements are 0; A0 = 0 for any matrix A
+Matrix Multiplication by Zero Matrix; the result is always the zero matrix: A0 = 0
+Diagonal of a Matrix; the elements from the top left to the bottom right of a square matrix
+Anti-diagonal of a Matrix; the elements from the top right to the bottom left of a square matrix
+Diagonal Matrix; a square matrix where all off-diagonal elements are zero
+Upper Triangular Matrix; a square matrix where all elements below the main diagonal are zero
+Lower Triangular Matrix; a square matrix where all elements above the main diagonal are zero
+Square Matrix; a matrix with the same number of rows and columns (NxN)
+Symmetric Matrix; a square matrix that is equal to its transpose: A^T = A
+Skew-Symmetric (Anti-symmetric) Matrix; a square matrix where the transpose equals the negative of the matrix: A^T = -A
+Orthogonal Matrix; a square matrix where the rows and columns are orthonormal unit vectors
+Identity Matrix (I); a diagonal matrix where all diagonal elements are 1
+Zero Matrix (0); a matrix where all elements are 0
+Sparse Matrix; a matrix in which most elements are zero
+Word Embeddings; vectors used to represent words as numerical vectors in natural language processing tasks
+Covariance Matrix; The covariance matrix is a square matrix that summarizes the relationships between multiple variables. For a set of n variables, the covariance matrix C is an n x n matrix, where each entry C[i][j] represents the covariance between variables i and j.
+Covariance Definition; Covariance between two variables X and Y measures how their values change together. Positive covariance indicates that X and Y increase or decrease together, while negative covariance means they move in opposite directions. Covariance of X and Y is calculated as Cov(X, Y) = Σ[(X_i - μ_X)(Y_i - μ_Y)] / N, where X_i and Y_i are individual data points, μ_X and μ_Y are means of X and Y, and N is the number of data points.
+Diagonal Entries of Covariance Matrix; The diagonal entries C[i][i] represent the variance of variable i. Variance measures how much a variable deviates from its mean. A larger diagonal value indicates higher variability in the corresponding variable.
+Off-Diagonal Entries of Covariance Matrix; Off-diagonal entries C[i][j] (i ≠ j) represent the covariance between variables i and j. Positive values indicate a positive relationship, while negative values indicate a negative relationship. The magnitude represents the strength of the relationship.
+Symmetry of Covariance Matrix; The covariance matrix is symmetric (C[i][j] = C[j][i] for all i and j) because the covariance between variables i and j is the same as the covariance between j and i.
