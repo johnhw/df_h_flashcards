@@ -1,0 +1,54 @@
+support;the range of values that a random variable can take; can be compact (finite) or infinite
+compact support;values within a specific, finite range
+infinite support;values that extend infinitely, without any upper or lower bounds
+semi-infinte support;values that extend infinitely in one direction, but are bounded in the other direction (e.g. 0 to infinity)
+probability density function (pdf);a function that describes the likelihood of a continuous random variable taking a specific value; represents densities, not probabilities
+meaning of density versus probability;pdf values indicate relative concentration of probabilities, whereas probabilities represent the integral of the pdf over a range of values
+cumulative distribution function (cdf);a function that gives the probability that a random variable takes a value less than or equal to a given value
+continuous random variables;variables that can take any real value within a given range
+issues with continuous random variables;the inability to assign probabilities to individual outcomes due to infinite possibilities
+uniform distribution;probability distribution where every outcome is equally likely
+multivariate distributions;probability distributions over vector spaces
+univariate normal;the normal distribution for a single random variable with mean (μ) and variance (σ^2)
+properties of the normal distribution;bell-shaped, symmetric, characterized by mean and variance
+multivariate normal;probability distribution over a real vector space, represented by a mean vector and covariance matrix
+mean vector;the expected values for each variable in a multivariate normal distribution
+covariance matrix;measures the strength and direction of linear relationships between variables in a normal distribution
+central limit theorem (CLT);a fundamental theorem in probability theory stating that the distribution of the sum (or average) of a large number of independent, identically distributed random variables approaches a normal distribution, regardless of the original distribution of the variables
+conditions for CLT;1. The random variables must be independent. 2. The random variables must be identically distributed. 3. The sample size must be sufficiently large.
+sampling distribution;the distribution of a statistic (e.g., mean or sum) calculated from a sample as the sample size increases, following the CLT
+population distribution;the distribution of values in the entire population from which a sample is drawn
+standard error;the standard deviation of a sampling distribution, representing the variability of sample means around the population mean
+implications of CLT;1. Allows the use of normal distribution approximations in various statistical analyses. 2. Justifies hypothesis testing and confidence interval construction for various sample statistics.
+importance in inferential statistics;enables making inferences about population parameters based on sample statistics, assuming the sample size is large enough
+limitations of CLT;may not apply if the sample size is small or the underlying population distribution has heavy tails or is not well-behaved
+population;the entire set of individuals, objects, or measurements of interest to a particular study
+sample;a subset of individuals, objects, or measurements selected from a population for the purpose of making inferences about the population
+random sampling;the process of selecting a sample from a population in such a way that every possible sample of a given size has an equal chance of being chosen
+sampling bias;occurs when the method of selecting a sample causes the sample to be unrepresentative of the population, leading to skewed or inaccurate results
+representative sample;a sample that accurately reflects the characteristics of the population from which it is drawn
+sampling error;the difference between a sample statistic and the corresponding population parameter caused by chance variation in the selection of the sample
+population parameter;a numerical measure that describes an aspect of a population, such as a mean or proportion
+sample statistic;a numerical measure that describes an aspect of a sample, such as a sample mean or sample proportion
+inference;the process of drawing conclusions or making predictions about a population based on information obtained from a sample
+generalizability;the extent to which the findings from a sample can be applied to the larger population
+direct inference;making conclusions about population parameters based on observed sample statistics without formal statistical methods
+maximum likelihood estimation (MLE);a method of estimating the parameters of a statistical model by maximizing the likelihood function, representing the probability of observed data given the parameters
+likelihood function;the probability of observing the given data for different values of the parameters in a statistical model
+Bayesian inference;a method of statistical inference in which Bayes' theorem is used to update the probability for a hypothesis as more evidence or information becomes available
+prior probability;the initial probability assigned to a hypothesis before considering the observed data in Bayesian inference
+likelihood;the probability of observing the given data for a specific set of parameters in Bayesian inference
+posterior probability;the updated probability of a hypothesis after considering the observed data in Bayesian inference, obtained by combining the prior probability and the likelihood
+Bayes' theorem;a mathematical formula that describes the relationship between the prior probability, likelihood, and posterior probability in Bayesian inference
+advantages of Bayesian inference;incorporates prior knowledge, provides a coherent framework for decision-making, and handles small sample sizes well
+disadvantages of Bayesian inference;requires specifying a prior distribution, can be computationally intensive, and interpretation of subjective priors can be challenging
+probabilistic programming;a programming paradigm that allows the incorporation of probability distributions and Bayesian inference into computer programs, enabling modeling of complex, uncertain systems
+Markov Chain Monte Carlo (MCMC);a computational method used for sampling from complex probability distributions, especially in Bayesian inference
+MCMC algorithm steps;1. Start with an initial state. 2. Propose a new state based on a transition probability. 3. Accept or reject the new state based on acceptance probability. 4. Repeat steps 2-3 to generate a chain of states. 
+Metropolis-Hastings algorithm;an MCMC algorithm that generalizes the basic MCMC approach by using a proposal distribution and an acceptance probability to generate a Markov chain
+Burn-in period;initial phase of an MCMC simulation where the chain stabilizes and reaches the target distribution, discarding the samples generated during this phase
+convergence diagnostics;methods used to assess whether an MCMC chain has reached the target distribution, ensuring accurate inference
+probabilistic programming language;a programming language designed specifically for expressing probabilistic models, making it easier to define and manipulate complex probability distributions
+advantages of probabilistic programming;facilitates rapid prototyping of Bayesian models, enables easy model modification, and supports complex, hierarchical models
+limitations of MCMC;computationally intensive, sensitive to the choice of initial conditions, and might require a large number of iterations to achieve convergence
+

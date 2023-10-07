@@ -1,0 +1,66 @@
+probability; a measure of the likelihood of an event occurring, ranging from 0 to 1
+sample space; the set of all possible outcomes of a random experiment
+frequency; the number of times an event occurs in a given number of trials or observations
+outcomes; the possible results of an experiment or random process
+events; subsets of the sample space, representing specific occurrences of interest
+distributions; mathematical functions describing the likelihood of each possible outcome in a sample space
+P(X=x) notation; probability of the random variable X taking a specific value x
+random variable; a variable that can take on different values, each with a certain probability, based on the outcomes of a random process
+discrete random variable; a random variable that can only take distinct, separate values, often countable
+continuous random variable; a random variable that can take any value within a specified range
+probability mass function (PMF); a function that describes the probabilities of discrete random variables taking specific values
+probability density function (PDF); a function that describes the probabilities of continuous random variables falling within specific intervals
+axioms of probability; fundamental rules governing probability theory, including unitarity, non-negativity, and additivity (sum rule)
+unitarity; the total probability of all possible outcomes in a sample space is equal to 1
+non-negativity; probabilities are never negative and can only range from 0 to 1
+additivity (sum rule); the probability of the union of mutually exclusive events is the sum of their individual probabilities
+conditional probability; the probability of an event occurring given that another event has already occurred, denoted as P(A|B) where A and B are events
+conditional probability from a PMF; P(X=x | Y=y) = P(X=x ∩ Y=y) / P(Y=y), where X and Y are discrete random variables, and P(X=x | Y=y) represents the probability of X taking a specific value x given that Y has taken a specific value y. P(X=x ∩ Y=y) represents the joint probability of X and Y both taking specific values, and P(Y=y) represents the probability of Y taking the value y.
+forward probability; the likelihood of observing certain outcomes given specific parameters or conditions, often used in predictive modeling and simulations
+inverse probability; the probability of specific parameters or conditions given observed outcomes, used in tasks like parameter estimation and hypothesis testing
+Bayesian interpretation of probability; a perspective that treats probability as a measure of belief or uncertainty, incorporating prior knowledge and updating beliefs based on new evidence
+frequentist interpretation of probability; a perspective that defines probability as the limit of relative frequency in a large number of trials, focusing on long-term behavior and objective outcomes
+Bayes' Rule equation; P(A|B) = (P(B|A) * P(A)) / P(B), where P(A|B) is the posterior probability of event A given event B, P(B|A) is the likelihood of event B given event A, P(A) is the prior probability of event A, and P(B) is the probability of event B.
+Bayes' Rule interpretation; a mathematical formula that updates the probability of an event (A) based on new evidence (B), balancing prior beliefs with the likelihood of the evidence given those beliefs
+Posterior; (P(A|B)) the updated probability of event A given new evidence B
+Likelihood; (P(B|A))the probability of observing evidence B given that event A has occurred
+Prior; (P(A)) the initial probability of event A before considering the new evidence
+Evidence; the probability of observing evidence B, also known as the marginal likelihood or total probability of B across all possible events
+Marginal Likelihood; (P(B)) the probability of observing evidence B, also known as the evidence of B across all possible events
+Integration over the evidence in Bayes' Rule; the process of summing or integrating the likelihood (P(B|A)) times the prior (P(A)) for all possible values of event A to obtain the marginal likelihood/evidence (P(B))
+joint distribution; a probability distribution that describes the probabilities of all possible combinations of values for two or more random variables
+marginal distribution; the probability distribution of a subset of random variables obtained by summing or integrating over the other variables in the joint distribution
+conditional distribution; the probability distribution of one or more random variables given specific values or ranges of values for other variables, obtained from the joint distribution
+marginalization formula; to find the marginal probability of a subset of random variables, sum or integrate the joint probability distribution over the other variables. For two discrete variables X and Y: P(X) = ∑(P(X, Y=y)) for all possible y values.
+conditioning formula; to find the conditional probability of variable X given variable Y, divide the joint probability of X and Y by the marginal probability of Y. For discrete variables: P(X|Y) = P(X, Y) / P(Y).
+bigrams; sequences of two adjacent elements or items, often used in text analysis and natural language processing
+n-gram models; statistical language models that predict the likelihood of a word or sequence of words based on the previous n-1 words
+likelihood; the probability of observed data (usually given specific values of parameters in a statistical model), often denoted as L(x) or L(x|θ) where θ represents parameters and x represents observed data
+likelihood function; a function that represents the likelihood of parameters in a statistical model given observed data
+likelihood of multiple independent events; in the case of independent events, the overall likelihood is the product of the likelihoods of individual events, often denoted as L(x1, x2, ..., xn) = L(x1) * L(x2) * ... * L(xn)
+log-likelihood; the natural logarithm of the likelihood function, often used for computational convenience as it transforms products into sums, reducing underflow problems: log-likelihood = log(L(x))
+expectation; a measure of the center or average value of a random variable, representing the long-term average of its outcomes
+intuitive meaning of expectation; the expected value represents what we would anticipate on average if a random experiment were repeated a large number of times
+expectation formula (for a discrete random variable); E(X) = Σ(x * P(X=x)) for all possible values x, where X is the random variable and P(X=x) is its probability mass function
+expectation formula (for a continuous random variable); E(X) = ∫(x * f(x)) dx over the entire range of possible values, where X is the random variable and f(x) is its probability density function
+expectation of a function of a random variable; E[g(X)] = Σ(g(x) * P(X=x)) for discrete random variables or E[g(X)] = ∫(g(x) * f(x)) dx for continuous random variables, where g(x) is a function of the random variable X
+entropy; a measure of uncertainty or disorder in a random variable, indicating the average amount of information needed to describe its outcomes
+entropy equation (for discrete random variables); H(X) = - Σ(P(X=x) * log₂(P(X=x))) for all possible values x, where H(X) represents the entropy of the random variable X
+entropy interpretation; entropy quantifies the uncertainty associated with a random variable. Higher entropy values indicate greater uncertainty, while lower values indicate more predictability and less uncertainty.
+information (in bits); a unit used to measure the amount of uncertainty or surprise associated with an event or outcome
+bit; a binary digit, representing a choice between two mutually exclusive options (0 or 1)
+entropy as average information; entropy H(X) = - Σ(P(X=x) * log₂(P(X=x)))  for all possible values x, representing the average amount of information required to specify an outcome in a random variable X
+information theory; a branch of mathematics and computer science that studies the quantification, storage, and communication of information, exploring concepts such as entropy, mutual information, and data compression
+logits; the natural logarithm of the odds, representing the relationship between the probability of an event and its complement, often used in logistic regression models. -ve means less likely than even, +ve means more likely than even
+odds; the ratio of the probability of an event occurring to the probability of it not occurring, calculated as P(event) / P(not event)
+log-probabilities; natural logarithm of probabilities, useful for numerical stability and simplifying calculations, often employed in machine learning algorithms, including softmax functions and neural networks
+log-odds; the natural logarithm of the odds, often used in logistic regression models. Also called logits.
+logistic function; a function that maps real values in (-inf, inf) to probabilities between 0 and 1, often used in logistic regression models. Also called the sigmoid function.
+empirical distribution; a probability distribution derived from observed data, representing the frequencies of different outcomes in the sample
+sampling from distributions; generating random samples from a given probability distribution, often used in simulations and statistical analysis to approximate real-world scenarios
+Monte Carlo approximation to expectation; using random sampling to estimate the expectation of a function, calculated as the average of function evaluations over a large number of random samples, providing an approximate solution to complex problems
+empirical distribution; \( P(X=x) = \frac{\text{Number of occurrences of } x}{\text{Total number of observations}} \), where \( X \) represents the random variable and \( x \) represents a specific outcome in the sample.
+sampling from distributions; \( X \sim F(x) \), where \( F(x) \) is the probability distribution function. Random samples \( x \) are drawn from \( F(x) \) to approximate the behavior of the distribution.
+Monte Carlo approximation to expectation; \( E(g(X)) \approx \frac{1}{N} \sum_{i=1}^{N} g(x_i) \), where \( N \) is the number of random samples drawn from the distribution \( X \), \( x_i \) represents each sample, and \( g(x_i) \) is the function to be evaluated.
+Monte Carlo error; the difference between the estimated value obtained through Monte Carlo simulations and the true value, decreasing as the number of samples (\(N\)) increases at a rate of \(O(\frac{1}{\sqrt{N}})\)
+convergence of Monte Carlo methods; the property where the estimates obtained through Monte Carlo simulations approach the true values as the number of samples increases

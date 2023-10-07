@@ -1,0 +1,90 @@
+evenly spaced samples;samples taken at regular intervals from a continuous signal
+consistent quantization;uniform assignment of digital values to analog signal levels
+quantization levels;number of distinct amplitude values in a digital signal
+quantization noise;error introduced due to the finite number of quantization levels
+sampling rate;number of samples taken per unit of time from a continuous signal
+Nyquist rate;minimum sampling rate required to accurately represent a signal without aliasing
+aliasing;artifacts caused by undersampling, creating false frequencies in the reconstructed signal
+aliasing effects;misinterpretation of high-frequency signals as low-frequency signals in the sampled data
+aliasing mitigation;preventing aliasing by using a sampling rate higher than the Nyquist rate
+SNR (Signal-to-Noise Ratio) formula;SNR = 20 * log10 (Amplitude of Signal / RMS Noise Amplitude)
+Frequency of aliased components formula;Aliased Frequency = |k * Sampling Frequency - Original Frequency|
+Quantization SNR formula;Quantization SNR = 6.02 * (Number of Bits) + 1.76 dB
+interpolation of irregular data;estimating unknown data points within a dataset with irregularly spaced points
+common interpolation methods;linear, polynomial, sinc, and nearest-neighbor interpolation
+linear interpolation;estimating unknown values by connecting adjacent known data points with straight lines
+polynomial interpolation;approximating data points using a polynomial equation fitted to neighboring points
+nearest-neighbor interpolation;estimating unknown values based on the nearest known data point
+resampling;process of changing the sampling rate of a signal, altering the number of samples per unit time 
+sliding window technique;a method to analyze data within a fixed-size window that slides over the dataset
+running mean;average computed over a fixed-size window as it moves through the data
+moving average;series of averages calculated from different subsets of the dataset, useful for smoothing
+linear filtering;process of modifying an input signal using a linear operation (a weighted sum), producing an output signal
+weighted averages;calculations that assign different weights to values in a window when computing a moving average
+convolution;mathematical operation combining two functions to produce a third, by multiplying and summing 
+convolution in signal processing;process of combining input signal and filter kernel to create an output signal
+linear filtering using convolution;applying a filter kernel to input signal via convolution to obtain filtered output
+convolution formula;(f * g)(t) = ∫[from -∞ to ∞] f(τ) * g(t - τ) dτ, where * denotes convolution
+convolution properties;commutativity, associativity, distributivity, and identity element exist in convolution
+common types of filters;low-pass, high-pass, and band-pass filters
+low-pass filter;allows low-frequency components to pass through while attenuating high-frequency components
+high-pass filter;allows high-frequency components to pass through while attenuating low-frequency components
+band-pass filter;allows a specific range of frequencies to pass through, attenuating others
+kernel; array of coefficients used in linear filtering to modify the input signal. We convolve a signal with a kernel specifying a filter. 
+filter kernel coefficients;weights assigned to each element of the kernel, affecting the filter's behavior
+filter design;process of selecting kernel size and coefficients to achieve desired filtering effect
+impulse response;the output of a system when an impulse signal (Dirac delta function) is applied as input
+impulse response function;representation of a system's output in response to an impulse signal
+impulse response recovery;process of determining a system's behavior by analyzing its impulse response
+impulse response recovery methods;deconvolution techniques, Fourier transform, and inverse filtering
+deconvolution;mathematical operation used to recover the original signal from its convolution with an impulse response
+impulse response recovery challenges;noise interference, finite duration of signals, and ill-conditioned systems
+irac delta function;mathematical function representing an idealized impulse at a single point in space or time
+properties of Dirac delta function;integral over the entire real line is 1, and it is zero everywhere except at 0
+nonlinear filtering;filtering technique where the computation is anything other than a weighted sum
+median filtering;nonlinear filtering method where the output is the median value of the neighboring elements in the window
+advantages of median filtering;eliminates spike noise, preserves edges, and is computationally efficient
+pure frequencies;signals consisting of a single frequency without any harmonics or overtones
+sinusoids;signals characterized by a sinusoidal waveform, represented as A * sin(2πft + φ), where A is amplitude, f is frequency, t is time, and φ is phase angle
+amplitude of a sinusoid;maximum displacement of the waveform from its equilibrium position
+frequency of a sinusoid;number of complete cycles occurring in one unit of time, measured in Hertz (Hz)
+phase angle of a sinusoid;offset in the horizontal direction, indicating the starting point of the waveform
+Fourier Transform;mathematical technique that transforms a time-domain signal into its frequency components
+continuous Fourier Transform equation;F(ω) = ∫[from -∞ to ∞] f(t) * e^(-jωt) dt, where F(ω) represents the frequency spectrum of f(t)
+Discrete Fourier Transform (DFT);discretized version of the Fourier Transform, applied to sampled, discrete-time signals
+DFT equation;X(k) = Σ[n=0 to N-1] x(n) * e^(-j(2π/N)kn), where X(k) represents the frequency component at index k
+Fast Fourier Transform (FFT);algorithm for efficiently computing the Discrete Fourier Transform, reducing time complexity from O(N^2) to O(N log N)
+time complexity of DFT;O(N^2), where N is the number of samples in the input signal
+time complexity of FFT;O(N log N), significantly faster than the naive DFT calculation
+Inverse Discrete Fourier Transform (IDFT);transforms frequency-domain representation back to time domain
+IDFT equation;x(n) = (1/N) * Σ[k=0 to N-1] X(k) * e^(j(2π/N)kn), where x(n) is the reconstructed time-domain signal
+spatial domain;representation of a signal in terms of its amplitude at various points in space or time
+frequency domain;representation of a signal in terms of its frequency components and their amplitudes
+convolution theorem;states that convolution in the time domain is equivalent to multiplication in the frequency domain
+implications of the convolution theorem;filtering in the frequency domain is computationally efficient, and convolution in time domain can be avoided
+filter design with DFT;designing filters by manipulating their frequency response in the frequency domain
+steps for filter design using DFT;1. Determine desired frequency response 2. Compute inverse DFT to get filter coefficients 3. Apply these coefficients for convolution
+frequency response;representation of a filter's behavior as a function of frequency, showing how it affects different frequencies
+sinc interpolation;interpolation technique that uses sinc function as the interpolation kernel
+sinc function;mathematical function defined as sinc(x) = sin(πx) / (πx), with a central peak at x = 0 and zeros at other integers
+ideal interpolation kernel;the sinc function, providing perfect reconstruction of the original signal without distortion
+sinc interpolation process;multiply input samples with sinc function, summing the results to obtain interpolated values
+limitations of sinc interpolation;computational intensity due to infinite support, requires truncation or windowing for practical implementation
+windowing functions;mathematical functions used to taper the edges of a signal before applying Fourier analysis or other algorithms
+common windowing functions;Hamming, Hanning, Blackman, and Bartlett (triangular) windows
+Hamming window;window function that reduces spectral leakage, characterized by its main lobe width and low sidelobes
+Hanning window;window function that offers improved frequency resolution at the expense of wider main lobe
+Blackman window;window function with improved sidelobe attenuation, useful for applications sensitive to spectral leakage
+use of windowing functions;minimizing spectral leakage, improving frequency resolution, and reducing artifacts in Fourier analysis
+application of windowing functions;applied to time-domain signals before performing Fourier Transform or other frequency analysis methods
+lobes;distinct sections in the frequency spectrum of a signal or a windowing function
+main lobe;central and largest lobe in the frequency spectrum, containing the primary frequency content of the signal
+sidelobes;smaller lobes on both sides of the main lobe in the frequency spectrum
+sidelobe level;amplitude of the sidelobes relative to the main lobe, indicating the extent of spectral leakage
+spectral leakage;phenomenon where signal energy spreads into adjacent frequency bins, causing inaccuracies in frequency analysis
+windowing to reduce sidelobes;applying window functions helps reduce sidelobe levels, minimizing spectral leakage and improving frequency analysis accuracy
+spectrum;representation of a signal's frequency content, showing the amplitudes and phases of each frequency component
+magnitude spectrum;computing the absolute values of the Fourier Transform coefficients
+phase spectrum;computing the angles (phases) of the Fourier Transform coefficients
+importance of magnitude spectrum;determines the amplitudes of frequency components, vital in applications like filtering and modulation
+importance of phase spectrum;determines the relative positions/offsets of frequency components, vital in applications like signal reconstruction

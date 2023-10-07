@@ -56,3 +56,4 @@ Covariance Definition; Covariance between two variables X and Y measures how the
 Diagonal Entries of Covariance Matrix; The diagonal entries C[i][i] represent the variance of variable i. Variance measures how much a variable deviates from its mean. A larger diagonal value indicates higher variability in the corresponding variable.
 Off-Diagonal Entries of Covariance Matrix; Off-diagonal entries C[i][j] (i ≠ j) represent the covariance between variables i and j. Positive values indicate a positive relationship, while negative values indicate a negative relationship. The magnitude represents the strength of the relationship.
 Symmetry of Covariance Matrix; The covariance matrix is symmetric (C[i][j] = C[j][i] for all i and j) because the covariance between variables i and j is the same as the covariance between j and i.
+Linear interpolation; combining two vectors by taking a weighted average of their elements, z = αx + (1 - α)y

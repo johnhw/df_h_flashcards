@@ -1,0 +1,45 @@
+Jacobian matrix;matrix of all first-order partial derivatives of a vector-valued function
+Jacobian determinant;scalar value indicating how a small volume in input space is scaled to output space
+Gradient vector;vector containing partial derivatives representing the rate of change of a function. First row of the Jacobian matrix
+Nabla operator;symbol (∇) denoting vector differential operator used to represent gradients or derivatives
+Gradient Descent;an iterative optimization algorithm used to minimize a function by adjusting its parameters in the direction of the negative gradient
+Gradient Descent Equation;θ = θ - α ∇J(θ), where θ represents parameters, α is the learning rate, J(θ) is the cost function, and ∇J(θ) is the gradient of the cost function at θ
+Learning Rate or Step Size;scalar value determining the size of steps taken during each iteration of gradient descent
+Stochastic Gradient Descent;updates parameters for each example or sub-batch, suitable for large datasets, more noisy but can escape local optima
+Convergence Criteria;stopping condition indicating when to stop gradient descent, commonly based on small changes in the cost function or fixed number of iterations
+Gradient Descent with Momentum;utilizes a moving average of past gradients to accelerate convergence, prevents oscillation in shallow ravines
+Learning Rate Schedules;techniques like step decay or exponential decay that gradually reduce the learning rate during training to fine-tune the model
+Local Minimum;critical point where the function has lower values than its surrounding points, indicating a potential lowest point in the local vicinity
+Local Maximum;critical point where the function has higher values than its surrounding points, indicating a potential highest point in the local vicinity
+Saddle Point;critical point where the function is neither a minimum nor a maximum, but the gradient is zero; can be a peak in one direction and a valley in another
+Ridge Point;critical point where the function has higher values in multiple directions and lower values in orthogonal directions
+Plateau Point;critical point where the function has a flat region, making it challenging to determine the nature of the critical point
+Global Minimum;critical point where the function has the absolute lowest value over its entire domain, indicating the overall minimum point
+Global Maximum;critical point where the function has the absolute highest value over its entire domain, indicating the overall maximum point
+Hessian Matrix;matrix of second-order partial derivatives representing the curvature of a multivariable function
+Eigenvalues of the Hessian Matrix;values that indicate the direction and magnitude of the curvature at a critical point, positive for minima, negative for maxima, mixed for saddle points
+Positive Definite Hessian Matrix;all eigenvalues are positive, indicating a local minimum at the critical point
+Negative Definite Hessian Matrix;all eigenvalues are negative, indicating a local maximum at the critical point
+Indefinite Hessian Matrix;contains both positive and negative eigenvalues, indicating a saddle point at the critical point
+Positive Semi-Definite Hessian Matrix;all eigenvalues are positive or zero, indicating a local minimum or plateau point at the critical point
+Negative Semi-Definite Hessian Matrix;all eigenvalues are negative or zero, indicating a local maximum or plateau point at the critical point
+Lipschitz Continuity;property of a function where there exists a Lipschitz constant L such that |f(x) - f(y)| ≤ L|x - y| for all x, y in the domain
+Lipschitz Constant;the smallest positive real number L satisfying the Lipschitz condition, quantifying the function's rate of change
+Lipschitz Continuous Function;function where the rate of change between any two points is bounded by a constant L, ensuring smoothness and control over oscillations
+Examples of Lipschitz Continuous Functions;linear functions, functions with bounded derivatives, functions defined on closed intervals with continuous derivatives
+Functions Not Lipschitz Continuous;functions with unbounded slopes, functions with infinite oscillations, functions with vertical asymptotes
+Importance of Lipschitz continuity;Lipschitz continuity ensures the stability of optimization algorithms, allowing predictable convergence rates and preventing overshooting
+Automatic Differentiation;technique for efficiently and accurately evaluating derivatives of mathematical expressions, used in machine learning and scientific computing
+Forward Mode Automatic Differentiation;computes derivatives by applying the chain rule from the inside out, suitable for functions with few inputs and many outputs
+Backward Mode Automatic Differentiation;computes derivatives by applying the chain rule from the outside in, efficient for functions with many inputs and few outputs (common in deep learning)
+Computational Complexity of Automatic Differentiation;forward mode complexity is linear in the number of inputs, backward mode complexity is linear in the number of outputs
+`autograd` Package in Python;Python library providing automatic differentiation for NumPy-like operations, simplifying gradient computation for machine learning models
+Tape-based AD;a method of automatic differentiation where intermediate values and operations are recorded on a tape, enabling efficient calculation of gradients
+Static vs. Dynamic Computation Graphs;static graphs (common in TensorFlow) define the computation graph before runtime, dynamic graphs (common in PyTorch) allow defining the graph as operations are executed
+Dual Numbers;extension of real numbers used in automatic differentiation, representing both the function value and its derivative in a single number
+Issues with Numerical Differentiation;problems like choosing an appropriate step size (leading to numerical instability or precision issues), round-off errors, and the curse of dimensionality in high-dimensional spaces
+Numerical Differentiation;approximating derivatives by finite differences, involving small changes in input to calculate the rate of change of a function
+Symbolic Differentiation;computing exact derivatives using algebraic techniques, providing precise symbolic expressions for derivatives
+Automatic Differentiation;efficiently and accurately evaluating derivatives of mathematical expressions, utilized in machine learning and scientific computing for gradient-based optimization
+Gradient Descent Equation: θ = θ - ∂∇L(θ)
+Gradient Vector Equation (for a scalar function f(x, y, z)): ∇f(x, y, z) = (∂f/∂x, ∂f/∂y, ∂f/∂z)
