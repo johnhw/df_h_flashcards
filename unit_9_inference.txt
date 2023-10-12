@@ -1,8 +1,8 @@
-support;the range of values that a random variable can take; can be compact (finite) or infinite
+support;the range of values that a random variable can take -- can be compact (finite) or infinite
 compact support;values within a specific, finite range
 infinite support;values that extend infinitely, without any upper or lower bounds
 semi-infinte support;values that extend infinitely in one direction, but are bounded in the other direction (e.g. 0 to infinity)
-probability density function (pdf);a function that describes the likelihood of a continuous random variable taking a specific value; represents densities, not probabilities
+probability density function (pdf);a function that describes the likelihood of a continuous random variable taking a specific value -- represents densities, not probabilities
 meaning of density versus probability;pdf values indicate relative concentration of probabilities, whereas probabilities represent the integral of the pdf over a range of values
 cumulative distribution function (cdf);a function that gives the probability that a random variable takes a value less than or equal to a given value
 continuous random variables;variables that can take any real value within a given range
