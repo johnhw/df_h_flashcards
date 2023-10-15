@@ -71,10 +71,6 @@ ideal interpolation kernel;the sinc function, providing perfect reconstruction o
 sinc interpolation process;multiply input samples with sinc function, summing the results to obtain interpolated values
 limitations of sinc interpolation;computational intensity due to infinite support, requires truncation or windowing for practical implementation
 windowing functions;mathematical functions used to taper the edges of a signal before applying Fourier analysis or other algorithms
-common windowing functions;Hamming, Hanning, Blackman, and Bartlett (triangular) windows
-Hamming window;window function that reduces spectral leakage, characterized by its main lobe width and low sidelobes
-Hanning window;window function that offers improved frequency resolution at the expense of wider main lobe
-Blackman window;window function with improved sidelobe attenuation, useful for applications sensitive to spectral leakage
 use of windowing functions;minimizing spectral leakage, improving frequency resolution, and reducing artifacts in Fourier analysis
 application of windowing functions;applied to time-domain signals before performing Fourier Transform or other frequency analysis methods
 lobes;distinct sections in the frequency spectrum of a signal or a windowing function

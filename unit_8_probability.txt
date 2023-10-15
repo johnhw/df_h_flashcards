@@ -1,19 +1,27 @@
-probability; a measure of the likelihood of an event occurring, ranging from 0 to 1
-sample space; the set of all possible outcomes of a random experiment
+probability; a measure of the how like an event is to occur, ranging from 0 to 1 inclusive
+sample space; the set of all possible outcomes of a random variable (often denoted as S)
 frequency; the number of times an event occurs in a given number of trials or observations
 outcomes; the possible results of an experiment or random process
-events; subsets of the sample space, representing specific occurrences of interest
+samples; a subset of observations or measurements from a larger population, consisting of outcomes
+events; subsets of the sample space, representing specific occurrences of interest. Every outcome is an event, but not every event is an outcome.
+example of event; in a dice throw, getting an even number  {2, 4, 6}
+example of an outcome; in a dice throw, getting a 2
 distributions; mathematical functions describing the likelihood of each possible outcome in a sample space
 P(X=x) notation; probability of the random variable X taking a specific value x
-random variable; a variable that can take on different values, each with a certain probability, based on the outcomes of a random process
+P(A) notation; probability of event A occurring
+P(A|B) notation; probability of event A occurring given that event B has occurred
+P(A ∩ B) notation; probability of both events A and B occurring
+P(A ∪ B) notation; probability of either event A or event B occurring
+random variable; a variable that can take on different values, each with a certain probability
 discrete random variable; a random variable that can only take distinct, separate values, often countable
-continuous random variable; a random variable that can take any value within a specified range
+continuous random variable; a random variable that can take any value over a continuous domain
 probability mass function (PMF); a function that describes the probabilities of discrete random variables taking specific values
-probability density function (PDF); a function that describes the probabilities of continuous random variables falling within specific intervals
+probability density function (PDF); a function that describes the probabilities of continuous random variables falling within specific intervals via densities
+density; a non-negative function that describes the relative likelihood of a continuous random variable taking on a given value
 axioms of probability; fundamental rules governing probability theory, including unitarity, non-negativity, and additivity (sum rule)
-unitarity; the total probability of all possible outcomes in a sample space is equal to 1
-non-negativity; probabilities are never negative and can only range from 0 to 1
-additivity (sum rule); the probability of the union of mutually exclusive events is the sum of their individual probabilities
+axiom of unitarity; the total probability of all possible outcomes in a sample space is equal to 1
+axiom of non-negativity; probabilities are never negative and can only range from 0 to 1
+axiom of additivity (sum rule); the probability of the union of mutually exclusive events is the sum of their individual probabilities
 conditional probability; the probability of an event occurring given that another event has already occurred, denoted as P(A|B) where A and B are events
 conditional probability from a PMF; P(X=x | Y=y) = P(X=x ∩ Y=y) / P(Y=y), where X and Y are discrete random variables, and P(X=x | Y=y) represents the probability of X taking a specific value x given that Y has taken a specific value y. P(X=x ∩ Y=y) represents the joint probability of X and Y both taking specific values, and P(Y=y) represents the probability of Y taking the value y.
 forward probability; the likelihood of observing certain outcomes given specific parameters or conditions, often used in predictive modeling and simulations
@@ -41,6 +49,7 @@ likelihood of multiple independent events; in the case of independent events, th
 log-likelihood; the natural logarithm of the likelihood function, often used for computational convenience as it transforms products into sums, reducing underflow problems: log-likelihood = log(L(x))
 expectation; a measure of the center or average value of a random variable, representing the long-term average of its outcomes
 intuitive meaning of expectation; the expected value represents what we would anticipate on average if a random experiment were repeated a large number of times
+expected value; the expected value of a random variable X is denoted as E(X) or μ, calculated as the sum of each possible value x multiplied by its probability P(X=x) for discrete random variables or the integral of each possible value x multiplied by its probability density f(x) for continuous random variables
 expectation formula (for a discrete random variable); E(X) = Σ(x * P(X=x)) for all possible values x, where X is the random variable and P(X=x) is its probability mass function
 expectation formula (for a continuous random variable); E(X) = ∫(x * f(x)) dx over the entire range of possible values, where X is the random variable and f(x) is its probability density function
 expectation of a function of a random variable; E[g(X)] = Σ(g(x) * P(X=x)) for discrete random variables or E[g(X)] = ∫(g(x) * f(x)) dx for continuous random variables, where g(x) is a function of the random variable X
@@ -50,6 +59,7 @@ entropy interpretation; entropy quantifies the uncertainty associated with a ran
 information (in bits); a unit used to measure the amount of uncertainty or surprise associated with an event or outcome
 bit; a binary digit, representing a choice between two mutually exclusive options (0 or 1)
 entropy as average information; entropy H(X) = - Σ(P(X=x) * log₂(P(X=x)))  for all possible values x, representing the average amount of information required to specify an outcome in a random variable X
+entropy as expected log probability; entropy H(X) = - E[log₂(P(X=x))] for all possible values x, representing the expected log probability of an outcome in a random variable X
 information theory; a branch of mathematics and computer science that studies the quantification, storage, and communication of information, exploring concepts such as entropy, mutual information, and data compression
 logits; the natural logarithm of the odds, representing the relationship between the probability of an event and its complement, often used in logistic regression models. -ve means less likely than even, +ve means more likely than even
 odds; the ratio of the probability of an event occurring to the probability of it not occurring, calculated as P(event) / P(not event)

@@ -1,22 +1,30 @@
 representing edge-weighted graphs as matrices; a common method is using an adjacency matrix where each entry represents the weight of the edge between two vertices
 spectral methods; representing graphs as matrices 
+discrete-continuous interchange; the idea that discrete objects can be represented as continuous objects, and vice versa
 flow in a graph; it can be represented as a product of the adjacency matrix and a vector representing flow values, giving a new vector representing updated flow values
 stochastic matrices; matrices where each row represents a probability distribution, meaning all elements are non-negative and each row sums to 1
 doubly stochastic matrices; matrices that are both row-stochastic and column-stochastic, where both rows and columns sum to 1
 integer matrix powers as repeated linear transformations; raising a matrix to an integer power means applying the linear transformation represented by the matrix multiple times
 matrix inversion; multiplying a vector by the inverse of a matrix undoes the transformation
+Number of eigenvalues; A square matrix of size n has n eigenvalues (though some may be complex).
+Number of eigenvectors; A square matrix of size n has n eigenvectors. However, if the matrix is singular, they may not be distinct.
 Eigenvalues of a matrix; Eigenvalues are the solutions to the characteristic equation det(A - λI) = 0, where A is the matrix, λ is the eigenvalue, and I is the identity matrix.
 Eigenvectors of a matrix; Eigenvectors corresponding to an eigenvalue λ are non-zero vectors v that satisfy the equation Av = λv, where A is the matrix and v is the eigenvector.
+Interpretation of an eigenvector; Eigenvectors represent the directions along which a linear transformation acts by scaling alone.
+Interpretation of an eigenvalue; Eigenvalues represent the scaling factor by which a linear transformation acts on the corresponding eigenvector.
 Trace of a matrix; Trace of a square matrix A, denoted as tr(A), is the sum of its diagonal elements *and* the sum of its eigenvalues.
 Determinant; The determinant of a matrix A, det(A), is equal to the product of its eigenvalues. det(A) = λ1 * λ2 * ... * λn, where λ1, λ2, ..., λn are the eigenvalues of A.
-Singularity; A matrix is singular if det(A)=0; it collapses a dimension and thus cannot be inverted.
-Non-singular; A matrix that *can* be inverrted, with det(A)!=0
+Geometric interpretation of the determinant; The determinant of a matrix A is equal to the area of the parallelogram spanned by its column vectors.
+Singular; A matrix is singular if det(A)=0; it collapses a dimension and thus cannot be inverted.
+Non-singular; A matrix that *can* be inverted, with det(A)!=0
 Power iteration method; Power iteration is an iterative algorithm used to find the leading eigenvalue and corresponding eigenvector of a matrix. It involves repeated multiplication of the matrix with a vector and normalization to converge towards the dominant eigenpair.
+Eigenpair; An eigenpair is a pair of an eigenvalue and its corresponding eigenvector.
 Geometric interpretation of eigenvalues; Eigenvalues represent the scaling factor by which a matrix transforms an eigenvector. If λ > 1, the eigenvalue stretches the vector; if 0 < λ < 1, it compresses the vector; if λ < 0, it reflects the vector.
 Geometric interpretation of singularity; A matrix is singular if and only if its determinant is zero. Geometrically, this means the matrix collapses the space along at least one dimension, resulting in a flat or lower-dimensional transformation.
 Real eigenvalues; Symmetric square matrices always have real eigenvalues and orthogonal eigenvectors. 
-Complex eigenvalues; Complex eigenvalues in a matrix indicate oscillatory behavior in dynamic systems. When eigenvalues have imaginary parts, the system exhibits periodic or oscillatory motion.
-Relation between trace and sum of eigenvalues; The sum of eigenvalues of a matrix A is equal to its trace: λ1 + λ2 + ... + λn = tr(A), where λ1, λ2, ..., λn are the eigenvalues of A.
+Complex eigenvalues; Complex eigenvalues in a matrix indicate oscillatory behavior in dynamic systems (e.g. in a flow on a graph). When eigenvalues have imaginary parts, the system exhibits periodic or oscillatory motion.
+Relation between trace and eigenvalues; The sum of eigenvalues of a matrix A is equal to its trace: λ1 + λ2 + ... + λn = tr(A), where λ1, λ2, ..., λn are the eigenvalues of A.
+Relation between determinant and eigenvalues; The determinant of a matrix A is equal to the product of its eigenvalues: det(A) = λ1 * λ2 * ... * λn, where λ1, λ2, ..., λn are the eigenvalues of A.
 Principal Component Analysis (PCA); PCA is a technique used for dimensionality reduction and data compression. It identifies the principal components (eigenvectors) of a the covariance matrix of a dataset, reducing its dimensions while retaining most of the original variance.
 Eigenvalue Decomposition in PCA; PCA involves computing the eigenvalue decomposition of the covariance matrix of the data. 
 Eigenspectrum; The eigenspectrum represents the distribution of eigenvalues; the eigenvalues ranked by absolute magnitude. Large eigenvalues indicate significant variance in the data, while small eigenvalues represent noise or less important features.
@@ -26,11 +34,13 @@ Dimensionality Reduction using PCA; PCA reduces the dimensionality of data by pr
 Limitations of PCA; PCA assumes linearity and orthogonality of principal components, making it sensitive to outliers and nonlinear relationships. It may not perform well in cases where these assumptions are violated, requiring alternative methods like nonlinear PCA.
 Choosing the Number of Principal Components; Determining the appropriate number of principal components (k) involves analyzing the cumulative explained variance. A common approach is to select k that captures a significant portion (e.g., 90% or 95%) of the total variance.
 Applications of PCA; PCA is widely used in various fields, including image and signal processing, bioinformatics, finance, and natural language processing. It aids in feature selection, noise reduction, and visualization of high-dimensional data.
+Left singular vectors; The left singular vectors of a matrix A are the eigenvectors of AA^T. They represent the input space of the matrix transformation. The SVD produces these as the columns of the matrix U.
+Right singular vectors; The right singular vectors of a matrix A are the eigenvectors of A^TA. They represent the output space of the matrix transformation. The SVD produces these as the columns of the matrix V.
 Singular Value Decomposition (SVD); SVD is a matrix factorization method that decomposes a matrix A into three separate matrices: A = UΣV^T, where U and V are orthogonal matrices, and Σ is a diagonal matrix containing singular values.
 Singular Values in SVD; Singular values in Σ represent the magnitude of scaling applied by the transformation. They are arranged in descending order, indicating the importance of corresponding singular vectors in U and V^T.
 Interpreting U and V^T in SVD; Columns of U are left singular vectors, representing the transformation of the input space. Columns of V^T are right singular vectors, indicating the transformation in the output space. They form orthonormal bases for the input and output spaces, respectively.
 Pseudo-inverse using SVD; The pseudo-inverse A^+ of a matrix A (A^+ = VΣ^+U^T) can be computed using SVD. Σ^+ is obtained by taking the reciprocal of non-zero singular values and transposing the resulting diagonal matrix.
-Pseudo-Inverse Interpretation; The pseudo-inverse, denoted as A^+, is a generalization of matrix inversion for non-square matrices. For a matrix A = UΣV^T, the pseudo-inverse is computed as A^+ = VΣ^+U^T, where Σ^+ is obtained by taking the reciprocal of non-zero singular values and transposing the resulting diagonal matrix. It acts as a kind of 'generalized inverse' that allows solving approximate solutions to overdetermined systems of linear equations when A is not invertible. In essence, it provides a solution that minimizes the error, making it valuable in applications like least squares regression and solving inconsistent or underdetermined systems.
+Pseudo-Inverse; Denoted as A^+, is a generalization of matrix inversion for non-square matrices. For a matrix A = UΣV^T, the pseudo-inverse is computed as A^+ = VΣ^+U^T, where Σ^+ is obtained by taking the reciprocal of non-zero singular values and transposing the resulting diagonal matrix. It acts as a kind of 'generalized inverse' that allows solving approximate solutions to overdetermined systems of linear equations when A is not invertible. In essence, it provides a solution that minimizes the error, making it valuable in applications like least squares regression and solving inconsistent or underdetermined systems.
 Low-Rank Approximation using SVD; SVD enables low-rank approximation of a matrix A. By retaining the first k singular values and their corresponding singular vectors (columns of U and V^T), a low-rank approximation A_k is obtained, minimizing the Frobenius norm ||A - A_k||.
 Condition Number; The condition number of a matrix A, κ(A), is the ratio of the largest to smallest singular value. A higher condition number indicates a ill-conditioned matrix, making numerical computations sensitive to small changes in input data.
 Applications in Recommendation Systems; SVD-based methods are used in recommendation systems, where user-item interaction matrices are factorized to discover latent patterns. Singular values capture the importance of latent features, aiding in personalized recommendations.
@@ -42,14 +52,15 @@ Solving Linear Systems using Matrix Inversion; For a square matrix A, the system
 Matrix Rank; The rank of a matrix A, denoted as rank(A), is the maximum number of linearly independent rows or columns in the matrix. It represents the dimension of the vector space spanned by the rows or columns of the matrix.
 Full Rank; A matrix which has Rank(A) = number of rows of A, and therefore is non-singular/invertible
 Deficient Rank; A matrix with Rank(A) < number of rows of A, and therefore is singular and cannot be inverted
+Null rank; A matrix with Rank(A) = 0, and therefore is singular and cannot be inverted
 Calculation of Rank; The rank of a matrix can be determined using various methods including singular value decomposition (SVD) and counting the non-zero singular values.
 Rank and Eigenvalues; The rank of a square matrix A is equal to the number of non-zero eigenvalues. 
 Adjacency Matrix; An adjacency matrix is a square matrix used to represent a graph. For a graph with n vertices, the adjacency matrix A is an n x n matrix, where A[i][j] equals 1 if there is an edge between vertex i and vertex j, and 0 otherwise.
 Directed Graphs; In the adjacency matrix of a directed graph, A[i][j] equals 1 if there is a directed edge from vertex i to vertex j. For an unconnected pair of vertices, A[i][j] equals 0.
 Undirected Graphs; In the adjacency matrix of an undirected graph, A[i][j] equals 1 if there is an edge between vertex i and vertex j. Importantly, for undirected graphs, the matrix is symmetric, meaning A[i][j] = A[j][i] for all i and j.
 Weighted Graphs; For weighted graphs, the adjacency matrix may contain weights instead of just 1s and 0s. A[i][j] represents the weight of the edge between vertex i and vertex j. If there is no edge, the entry is typically set to a special value like infinity.
-Positive Definite Matrix; A symmetric matrix A is positive definite if, for any non-zero vector x, the quadratic form x^T Ax is positive, i.e., x^T Ax > 0. Positive definite matrices have all positive eigenvalues.
-Positive Semidefinite Matrix; A symmetric matrix A is positive semidefinite if, for any non-zero vector x, the quadratic form x^T Ax is non-negative, i.e., x^T Ax ≥ 0. Positive semidefinite matrices have non-negative eigenvalues.
-Negative Definite Matrix; A symmetric matrix A is negative definite if, for any non-zero vector x, the quadratic form x^T Ax is negative, i.e., x^T Ax < 0. Negative definite matrices have all negative eigenvalues.
-Negative Semidefinite Matrix; A symmetric matrix A is negative semidefinite if, for any non-zero vector x, the quadratic form x^T Ax is non-positive, i.e., x^T Ax ≤ 0. Negative semidefinite matrices have non-positive eigenvalues.
-Indefinite Matrix; A symmetric matrix A is indefinite if it is neither positive nor negative definite. In other words, there exist vectors x and y such that x^T Ax > 0 and y^T Ay < 0. Indefinite matrices have both positive and negative eigenvalues.
+Positive Definite Matrix; A symmetric matrix A is positive definite if, for any non-zero vector x, the quadratic form x^T Ax is positive, i.e., x^T Ax > 0. Positive definite matrices have all positive eigenvalues. Never flips the sign of a vector. Always invertible.
+Positive Semidefinite Matrix; A symmetric matrix A is positive semidefinite if, for any non-zero vector x, the quadratic form x^T Ax is non-negative, i.e., x^T Ax ≥ 0. Positive semidefinite matrices have non-negative eigenvalues. Never flips the sign of a vector.
+Negative Definite Matrix; A symmetric matrix A is negative definite if, for any non-zero vector x, the quadratic form x^T Ax is negative, i.e., x^T Ax < 0. Negative definite matrices have all negative eigenvalues. Always flips the sign of a vector. Always invertible.
+Negative Semidefinite Matrix; A symmetric matrix A is negative semidefinite if, for any non-zero vector x, the quadratic form x^T Ax is non-positive, i.e., x^T Ax ≤ 0. Negative semidefinite matrices have non-positive eigenvalues. Always flips the sign of a vector.
+Indefinite Matrix; A symmetric matrix A is indefinite if it is neither positive nor negative definite. In other words, there exist vectors x and y such that x^T Ax > 0 and y^T Ay < 0. Indefinite matrices have both positive and negative eigenvalues. Flips the sign of some vectors.
