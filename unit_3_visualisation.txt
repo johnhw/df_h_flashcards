@@ -6,8 +6,10 @@ stat; a statistical transformation applied to the data before plotting, such as 
 scale; a mapping between data values and aesthetic properties, like color or size
 coord; the coordinate system defining the x and y axes and their scales
 guide; elements like legends, labels, and color scales that help interpret the plot
-Nightingale; a pioneer in data visualization, known for her coxcomb diagram representing causes of mortality in the Crimean War, emphasizing the significance of sanitation in healthcare
-Playfair; credited with inventing statistical graphics, introduced line charts, bar charts, and pie charts, making complex data accessible and understandable to a wider audience
+Layered Grammar of Graphics; a framework for visualizing data, comprising a set of components that can be combined in layers to create a plot
+components of the Layered Grammar of Graphics; data, mapping, stat, coord, geom, scale, guide, facet, layer
+Florence Nightingale; a pioneer in data visualization, known for her coxcomb diagram representing causes of mortality in the Crimean War, emphasizing the significance of sanitation in healthcare
+William Playfair; credited with inventing statistical graphics, introduced line charts, bar charts, and pie charts, making complex data accessible and understandable to a wider audience
 axes; coordinate axes representing data values, comprising x-axis and y-axis, defining the scales and ranges for data display
 title; a text element providing a descriptive title for the plot, giving context to the data being visualized
 legend; a guide that explains the meaning of colors, shapes, or other visual properties used in the plot, corresponding to different data categories
@@ -15,12 +17,15 @@ labels; textual annotations attached to axes, data points, or other plot element
 facet labels; labels specific to subsets of data in faceted plots, providing context for each subset within the plot
 guides; collectively refer to legends, labels, and color scales, aiding in the interpretation of visual properties and mapped data values
 theme; a predefined set of visual properties, such as colors, fonts, and background, defining the overall appearance of the plot
-shape; the visual appearance of data points, defining how individual data points are represented, such as circles, squares, or triangles
+shape; the visual appearance of point geoms, defining how individual data points are represented, such as circles, squares, or triangles
 colour; the hue or intensity of color used to distinguish between different data points or categories in the plot
-size; the physical dimension of data points, determining their area or diameter in the plot, often representing a quantitative variable
-alpha; the transparency or opacity of data points, allowing overlapping points to be visually distinguished
+size; the physical dimension of point geoms, determining their area or diameter in the plot, often representing a quantitative variable
+alpha; the transparency or opacity of geometry, allowing overlapping geoms to be visually distinguished
 linetype; the pattern used to represent lines, differentiating between dashed, solid, and dotted lines
 colour scales; mappings from data values to colors, aiding in the visualization of information in plots
+perceptually uniform monotonic brightness scales; color scales where equal steps in data values result in equal perceptual differences in brightness, ensuring accurate representation
+examples of good color scales for unsigned data; viridis, plasma, inferno, magma, cividis
+rainbow color scales; vibrant, colourful but perceptually non-uniform color scales, where equal steps in data values do not result in equal perceptual differences in color, leading to inaccurate representation
 perceptual linearity; the property of a color scale where equal steps in data values result in equal perceptual differences in color, ensuring accurate representation
 monotonic colour scale; a color scale where the perceived brightness consistently increases or decreases with the data values
 unsigned colour scale; a color scale representing a unipolar range of values, where all data points are compared to a single reference point, often used for non-negative values
@@ -29,26 +34,28 @@ scatter plot; a type of plot where individual data points are represented as dot
 line plot; a plot where data points are connected by straight lines, emphasizing the trend or pattern in the data over a continuous range, suitable for time-series or sequential data where data lies on a true continuum
 staircase plot; a type of plot where data points are connected by horizontal and vertical lines, creating a step-like appearance, often used to represent discrete or categorical data
 bar chart; a graphical representation of categorical data using rectangular bars of varying heights or lengths, with the length of each bar proportional to the value it represents, suitable for comparing discrete categories
-Box plot; a statistical plot that displays the distribution of a dataset, indicating the minimum, first quartile, median, third quartile, and maximum values, providing insights into the data's spread and identifying potential outliers
+Box plot; a statistical plot that displays the distribution of a dataset, indicating the first quartile, median, third quartile, as well as a a "whisker" range, providing insights into the data's spread and identifying potential outliers
 polar coord; a coordinate system where data points are plotted on a circular grid, often used to display cyclical or periodic data
 log-log coord; a coordinate system where both x-axis and y-axis have logarithmic scales, useful for visualizing data with exponential growth or decay
-semilog coord; a coordinate system where only one axis (either x or y) has a logarithmic scale, suitable for data with a wide range of values
-symlog coord; a coordinate system where linear scaling is used for small values, and logarithmic scaling is used for large values, accommodating data with both small and large magnitude
+semilog coord; a coordinate system where only one axis (either x or y) has a logarithmic scale, suitable for data with a wide range of magnitudes
+symlog coord; a coordinate system where linear scaling is used for small values, and logarithmic scaling is used for absolute large values, accommodating data with both small and large magnitude over both positive and negative values
 aspect ratio; the ratio of the plot's width to its height, influencing the visual perception of the data, where equal aspect ratios maintain proportionality in the plot elements
 figure size; the dimensions (width and height) of the entire plotting area, determining the overall size of the plot and its readability, important for adjusting the plot to fit within documents or presentations
 histogram; a graphical representation of the distribution of a dataset, showing the frequency of different ranges of values
-Box plot; a graphical summary of a dataset's distribution, displaying the minimum, first quartile, median, third quartile, and maximum values, useful for detecting outliers
-violin plot; a combination of a Box plot and a density plot, providing a more detailed view of the data's distribution, especially in terms of skewness and multimodality
+violin plot; a density plot, providing a more detailed view of the data's distribution, especially in cases of skewness and multimodality
 dot plot; a simple chart where each data point is represented by a dot along a single axis, useful for comparing individual values in a dataset
 means; the arithmetic average of a set of values, calculated by adding up all values and dividing by the total number of values
 medians; the middle value in a sorted dataset, separating the higher half from the lower half of the data points
 error bars; graphical representations of the variability or uncertainty of data points in a plot, typically indicating the standard deviation or confidence intervals
 confidence intervals; a range of values that is likely to contain an unknown population parameter, providing a measure of the uncertainty associated with a sample estimate
 standard deviation; a measure of the dispersion or spread of a set of values, indicating how much the values deviate from the mean
-standard error; an estimate of the standard deviation of a sample population, indicating the variability of the sample mean
+standard error; an estimate of the standard deviation of a sample population, indicating the variability of the sample mean. Equal to the standard deviation divided by the square root of the sample size
 uncertainty representation; the visual depiction of the degree of confidence or reliability associated with data points or statistical estimates in a plot
 error bars; horizontal or vertical lines extending from data points or bars, indicating the range within which the true value is likely to lie, providing a measure of uncertainty
 confidence intervals; shaded areas or lines around a plot element, representing the range within which a certain percentage of data points or estimates are expected to fall, indicating the precision of the estimate
 uncertainty bands; shaded regions surrounding a line or curve in a plot, indicating the variability or uncertainty in the data, commonly used in time series or regression plots
 whiskers in Box plots; lines extending from the box in a Box plot, showing the range within which most of the data points lie, with outliers displayed as individual points, illustrating the spread and potential outliers in the dataset
 y versus x mappings; the directionality of the relationship between variables in a plot, where the y-axis represents the dependent variable and the x-axis represents the independent variable, indicating the direction of causality
+causality in plots; x-axis indicates the cause (independent variable) and y-axis indicates the effect (dependent variable)
+chartjunk; unnecessary or distracting visual elements in a plot, such as heavy gridlines, excessive tick marks, or decorative images, that do not add to the message of the plot
+data-to-ink ratio; the proportion of ink used to display data in a plot, where the ink used to display data should be maximized, and the ink used for non-data elements should be minimized
