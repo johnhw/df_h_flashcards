@@ -13,6 +13,7 @@ Lp norm of vector v; generalization of L2 norm: ||v||_p = (|v_1|^p + |v_2|^p + .
 L-infinity norm of vector v; maximum absolute value of its elements: ||v||_∞ = max(|v_1|, |v_2|, ..., |v_N|)
 normalisation; process of scaling a vector by dividing by its norm
 unit vector; vector with norm 1 (in some specified norm)
+lerp; linear interpolation, i.e. weighted average of two vectors 
 Curse of Dimensionality; phenomenon where high-dimensional spaces exhibit counterintuitive behaviors, especially increasing sparsity
 Density in shells; in high dimensions, most of the volume of a hypersphere is concentrated near its surface
 Volume of unit ball in high-d space; decreases exponentially with dimension
