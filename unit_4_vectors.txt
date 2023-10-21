@@ -1,27 +1,36 @@
-vectors in R^N; ordered arrays of N real numbers representing points in N-dimensional space
+vectors in R^N; ordered tuples of N real numbers representing points in N-dimensional space
 vector addition (v + w); component-wise addition of corresponding elements of vectors v and w
 scalar multiplication (c * v); multiplication of each element of vector v by scalar constant c
 norm; length of a vector -- a defined property
 fundamental vector operations; addition, scalar multiplication
+topological vector space; a vector space equipped with a norm (distances exist)
+inner product vector space; a vector space equipped with an inner product (angles exist)
 distance; norm of a difference of two vectors norm(A-B) or norm(A+(-1*B))
 inner product (dot product) of vectors v and w; sum of the products of corresponding elements of v and w
+real number; a number that can be represented by a point on the number line
+$R^N$; the set of all N-tuples of real numbers
+dot product; the inner product for a real vector space
 angle between vectors; angle θ between vectors v and w is given by cos(θ) = (v · w) / (||v|| ||w||)
 linear interpolation of two vectors; z = αx + (1 - α)y combines vectors x and y by taking a weighted average of their elements
 L1 norm of vector v; sum of the absolute values of its elements: ||v||_1 = |v_1| + |v_2| + ... + |v_N|
 L2 norm of vector v; square root of the sum of the squares of its elements: ||v||_2 = sqrt(v_1^2 + v_2^2 + ... + v_N^2)
 Lp norm of vector v; generalization of L2 norm: ||v||_p = (|v_1|^p + |v_2|^p + ... + |v_N|^p)^(1/p)
-L-infinity norm of vector v; maximum absolute value of its elements: ||v||_∞ = max(|v_1|, |v_2|, ..., |v_N|)
+L_infinity norm of vector v; maximum absolute value of its elements: ||v||_∞ = max(|v_1|, |v_2|, ..., |v_N|)
+L_-infinity norm; minimum absolute value of its elements: ||v||_-∞ = min(|v_1|, |v_2|, ..., |v_N|)
 normalisation; process of scaling a vector by dividing by its norm
 unit vector; vector with norm 1 (in some specified norm)
+mean vector; average of a set of vectors, corresponding to the geometric centroid of the vectors
+computation of the mean vector; sum the vectors and divide by the number of vectors (i.e. multiply by 1/N)
 lerp; linear interpolation, i.e. weighted average of two vectors 
 Curse of Dimensionality; phenomenon where high-dimensional spaces exhibit counterintuitive behaviors, especially increasing sparsity
 Density in shells; in high dimensions, most of the volume of a hypersphere is concentrated near its surface
 Volume of unit ball in high-d space; decreases exponentially with dimension
 Edge effects in high-d boxes; almost all points in a high-d box are very close to the edges or corners
-Near-orthogonality of all vectors; in high-dimensional spaces, most vectors are nearly orthogonal to each other
+Near-orthogonality of all vectors; in (very) high-dimensional spaces, most vectors are nearly orthogonal to each other (at 90 degrees)
 Exponential increase in distance; as dimensionality increases, points become exponentially farther apart
 Increased sparsity of data; in high-dimensional spaces, data points become sparse, making analysis and visualization challenging
-Difficulty in visualizing and interpreting data; high-dimensional data is difficult to represent visually and comprehend intuitively
+Difficulty in visualizing and interpreting high-d data; high-dimensional data is difficult to represent visually and comprehend intuitively
+All the bread is crust; in high-dimensional spaces, most of the volume inside some convex object (like a sphere or a box) is concentrated near its surface
 Matrix Addition (A + B); sum of corresponding elements of matrices A and B
 Scalar Multiplication (c * A); multiplication of each element of matrix A by scalar constant c
 Matrix Multiplication (AB); operation resulting from composing linear maps represented by matrices A and B
@@ -30,6 +39,10 @@ Matrix Dimensions (NxM); notation where N represents the number of rows and M re
 Matrix-Vector Multiplication (Av); result of applying linear transformation represented by matrix A to vector v
 Transpose of a Matrix (A^T); operation flipping rows and columns of matrix A
 (AB)^T = B^T A^T; transposition property of the product of matrices
+Linear map; any function between two vector spaces that satisfies the requirements of linearity
+Linear transform; any linear map from $R^N$ to $R^N$ (i.e. where dimension isn unchanged)
+Linear map properties; linearity, preservation of origin, lines, and planes
+Linear projection; any linear map from $R^N$ to $R^M$ where M < N (i.e. where dimension is reduced)
 Properties of Linear Maps; linearity, preservation of origin, lines, and planes are fundamental properties of linear transformations
 Combining Linear Maps; all matrix operations (addition, multiplication, etc.) can be seen as combinations of rotations, scales, and translations
 Definition of Linearity; linear maps satisfy the properties of additivity and scalar multiplication
@@ -44,17 +57,18 @@ Definition of Matrices in R^(MxN); matrices are rectangular arrays of real numbe
 Matrix Multiplication (AB); operation resulting in a new matrix C, where C[i][j] is the dot product of the ith row of A and jth column of B
 Associative Property of Matrix Multiplication; (AB)C = A(BC), allowing the grouping of matrix multiplication operations
 Non-Commutative Property of Matrix Multiplication; in general, AB ≠ BA for matrices A and B
-Identity Matrix (I); a square matrix where all elements on the main diagonal are 1 and all other elements are 0; AI = A and IA = A
+Identity Matrix (I); a square matrix where all elements on the main diagonal are 1 and all other elements are 0; AI = A and IA = A. Has no effect on a vector when multiplied by it
 Effect of Multiplying by Identity Matrix; any matrix multiplied by the identity matrix remains unchanged
-Zero Matrix (0); a matrix where all elements are 0; A0 = 0 for any matrix A
+Zero Matrix (0); a matrix where all elements are 0; A0 = 0 for any matrix A, maps all vectors to the origin
 Matrix Multiplication by Zero Matrix; the result is always the zero matrix: A0 = 0
 Diagonal of a Matrix; the elements from the top left to the bottom right of a square matrix
 Anti-diagonal of a Matrix; the elements from the top right to the bottom left of a square matrix
-Diagonal Matrix; a square matrix where all off-diagonal elements are zero, a pure scaling
+Diagonal Matrix; a square matrix where all off-diagonal elements are zero, a pure scaling operation
 Upper Triangular Matrix; a square matrix where all elements below the main diagonal are zero
 Lower Triangular Matrix; a square matrix where all elements above the main diagonal are zero
 Square Matrix; a matrix with the same number of rows and columns (NxN)
-Symmetric Matrix; a square matrix that is equal to its transpose: A^T = A
+Properties of square matrix; *may* have an inverse; has an eigenvalue decomposition; has a determinant 
+Symmetric Matrix; a square matrix that is equal to its transpose: A^T = A. The diagonal elements are symmetric about the main diagonal
 Skew-Symmetric (Anti-symmetric) Matrix; a square matrix where the transpose equals the negative of the matrix: A^T = -A
 Orthogonal Matrix; a square matrix where the rows and columns are orthonormal unit vectors
 Identity Matrix (I); a diagonal matrix where all diagonal elements are 1
