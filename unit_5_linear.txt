@@ -2,23 +2,34 @@ representing edge-weighted graphs as matrices; a common method is using an adjac
 spectral methods; representing graphs as matrices 
 discrete-continuous interchange; the idea that discrete objects can be represented as continuous objects, and vice versa
 flow in a graph; it can be represented as a product of the adjacency matrix and a vector representing flow values, giving a new vector representing updated flow values
+sink; a vertex with more outgoing edge weight than incoming edge weight
+source; a vertex with more incoming edge weight than outgoing edge weight
+degree; the count of the edges connected to a vertex
+in-degree; the count of the edges entering a vertex
+out-degree; the count of the edges leaving a vertex
+adjacency matrix; a square matrix where each entry represents the weight of the edge between two vertices, usually sparse. 
+directed graph; a graph where edges have a direction
+undirected graph; a graph where edges have no direction
+flow conservation; the idea that the total flow into a vertex must equal the total flow out of a vertex
 stochastic matrices; matrices where each row represents a probability distribution, meaning all elements are non-negative and each row sums to 1
 doubly stochastic matrices; matrices that are both row-stochastic and column-stochastic, where both rows and columns sum to 1
+matrix exponentiation; raising a matrix to a power like A^5 = A @ A @ A @ A @ A
 integer matrix powers as repeated linear transformations; raising a matrix to an integer power means applying the linear transformation represented by the matrix multiple times
 matrix inversion; multiplying a vector by the inverse of a matrix undoes the transformation
 Number of eigenvalues; A square matrix of size n has n eigenvalues (though some may be complex).
 Number of eigenvectors; A square matrix of size n has n eigenvectors. However, if the matrix is singular, they may not be distinct.
-Eigenvalues of a matrix; Eigenvalues are the solutions to the characteristic equation det(A - λI) = 0, where A is the matrix, λ is the eigenvalue, and I is the identity matrix.
-Eigenvectors of a matrix; Eigenvectors corresponding to an eigenvalue λ are non-zero vectors v that satisfy the equation Av = λv, where A is the matrix and v is the eigenvector.
+Eigenvalues of a matrix; Eigenvalues are the solutions to the characteristic equation det(A - λI) = 0, where A is the (square) matrix, λ is the eigenvalue, and I is the identity matrix.
+Eigenvectors of a matrix; Eigenvectors corresponding to an eigenvalue λ are non-zero vectors v that satisfy the equation Av = λv, where A is the (square) matrix and v is the eigenvector.
 Interpretation of an eigenvector; Eigenvectors represent the directions along which a linear transformation acts by scaling alone.
 Interpretation of an eigenvalue; Eigenvalues represent the scaling factor by which a linear transformation acts on the corresponding eigenvector.
 Trace of a matrix; Trace of a square matrix A, denoted as tr(A), is the sum of its diagonal elements *and* the sum of its eigenvalues.
 Determinant; The determinant of a matrix A, det(A), is equal to the product of its eigenvalues. det(A) = λ1 * λ2 * ... * λn, where λ1, λ2, ..., λn are the eigenvalues of A.
-Geometric interpretation of the determinant; The determinant of a matrix A is equal to the area of the parallelogram spanned by its column vectors.
+Geometric interpretation of the determinant; The determinant of a matrix A is equal to the area of the parallelogram spanned by its column vectors. Alternatively, how much space is "squished/expanded" by the transformation represented by A.
 Singular; A matrix is singular if det(A)=0; it collapses a dimension and thus cannot be inverted.
-Non-singular; A matrix that *can* be inverted, with det(A)!=0
+Non-singular; A matrix that *can* be inverted, with det(A)!=0. Every dimension is preserved. 
 Power iteration method; Power iteration is an iterative algorithm used to find the leading eigenvalue and corresponding eigenvector of a matrix. It involves repeated multiplication of the matrix with a vector and normalization to converge towards the dominant eigenpair.
 Eigenpair; An eigenpair is a pair of an eigenvalue and its corresponding eigenvector.
+Eigendecomposition; Eigendecomposition is the factorization of a matrix into a set of eigenvectors and eigenvalues. 
 Geometric interpretation of eigenvalues; Eigenvalues represent the scaling factor by which a matrix transforms an eigenvector. If λ > 1, the eigenvalue stretches the vector; if 0 < λ < 1, it compresses the vector; if λ < 0, it reflects the vector.
 Geometric interpretation of singularity; A matrix is singular if and only if its determinant is zero. Geometrically, this means the matrix collapses the space along at least one dimension, resulting in a flat or lower-dimensional transformation.
 Real eigenvalues; Symmetric square matrices always have real eigenvalues and orthogonal eigenvectors. 
@@ -30,6 +41,7 @@ Eigenvalue Decomposition in PCA; PCA involves computing the eigenvalue decomposi
 Eigenspectrum; The eigenspectrum represents the distribution of eigenvalues; the eigenvalues ranked by absolute magnitude. Large eigenvalues indicate significant variance in the data, while small eigenvalues represent noise or less important features.
 Principal Components; Principal components are the eigenvectors of the covariance matrix. They form a new orthogonal basis for the data, with the first principal component capturing the most variance, the second capturing the second most, and so on.
 Variance explained by Principal Components; Each principal component explains a certain percentage of the total variance in the data. The ratio of the eigenvalue of a principal component to the sum of all eigenvalues indicates the proportion of variance it represents.
+Dimensionality reduction; The process of finding a low-dimensional representation of a dataset that preserves most of its important features. It is useful for visualisation and speeding up machine learning algorithms.
 Dimensionality Reduction using PCA; PCA reduces the dimensionality of data by projecting it onto a lower-dimensional subspace formed by the top-k principal components. This reduces noise and computational complexity while
 Limitations of PCA; PCA assumes linearity and orthogonality of principal components, making it sensitive to outliers and nonlinear relationships. It may not perform well in cases where these assumptions are violated, requiring alternative methods like nonlinear PCA.
 Choosing the Number of Principal Components; Determining the appropriate number of principal components (k) involves analyzing the cumulative explained variance. A common approach is to select k that captures a significant portion (e.g., 90% or 95%) of the total variance.
@@ -64,3 +76,13 @@ Positive Semidefinite Matrix; A symmetric matrix A is positive semidefinite if, 
 Negative Definite Matrix; A symmetric matrix A is negative definite if, for any non-zero vector x, the quadratic form x^T Ax is negative, i.e., x^T Ax < 0. Negative definite matrices have all negative eigenvalues. Always flips the sign of a vector. Always invertible.
 Negative Semidefinite Matrix; A symmetric matrix A is negative semidefinite if, for any non-zero vector x, the quadratic form x^T Ax is non-positive, i.e., x^T Ax ≤ 0. Negative semidefinite matrices have non-positive eigenvalues. Always flips the sign of a vector.
 Indefinite Matrix; A symmetric matrix A is indefinite if it is neither positive nor negative definite. In other words, there exist vectors x and y such that x^T Ax > 0 and y^T Ay < 0. Indefinite matrices have both positive and negative eigenvalues. Flips the sign of some vectors.
+Orthogonal matrix; An orthogonal matrix is a square matrix whose columns and rows are orthogonal unit vectors (orthonormal vectors). The inverse of an orthogonal matrix is equal to its transpose. A pure *rotation* matrix.
+Pure rotation matrix; an orthogonal matrix that represents a rotation in space
+Pure scaling matrix; a diagonal matrix that represents a scaling in space
+Sparse matrix; A sparse matrix is a matrix with a large number of zero values. The opposite of a sparse matrix is a dense matrix, which has few zero values.
+Markov Chain; A Markov chain is a stochastic model describing a sequence of possible events in which the probability of each event depends only on the state attained in the previous event. It can be represented as a square matrix called the transition matrix.
+Transition Matrix; A transition matrix is a square matrix that describes the probabilities of moving from one state to another in a Markov chain. It is a stochastic matrix, meaning all its entries are non-negative and each column sums to 1.
+Low rank approximation; An approximation of a matrix A. It is obtained by retaining the first k singular values and their corresponding singular vectors (columns of U and V^T).
+Whitening; a rigorous form of normalisation of a dataset that transforms it into a Gaussian distribution with zero mean and unit covariance. It is a linear transformation that removes redundancy in the data, making it useful in various machine learning algorithms.
+Demeaning; a form of normalisation of a dataset that transforms it into a zero mean distribution by subtracting the mean. 
+Standardisation; a form of normalisation of a dataset that transforms it into a zero mean distribution with unit variance in each dimension by subtracting the mean and dividing by the standard deviation.
