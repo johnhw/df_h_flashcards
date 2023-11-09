@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 10pt;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* Minimum 33.333% width for each column with a gap of 20px */
+
+    /* Responsive columns */
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 0px;
+    color: rgb(82, 82, 82);
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    background-color: #ffffff;
+    /* Default background color for the bottom half */
+    page-break-inside: avoid;
+}
+
+.card-title p 
+{
+    padding-top: 8px;
+    padding-bottom: 8px;    
+}
+
+.bottom-half p
+{
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.wide-card {
+   
+    grid-column: span 2;
+   
+}
+
+
+.top-half {
+    background-color: #00000010;
+    /* Background color for the top half */
+    border-radius: 18px 8px 0 0;
+    /* Rounded corners at the top */
+    padding: 1px;
+    margin: 0px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.top-half-clicked 
+{
+    background-color: #110b3340;
+}
+
+.bottom-half {
+    padding: 5px;
+    margin-left: 1em;
+    margin-right: 1em;
+    text-align: center;
+
+}
+
+.title-bar h1 {
+    margin: 1em;
+    text-align: center;
+}
+
+.separator {
+    background-color: #1b095a;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    page-break-before: always;
+}
+
+.separator-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Style for the button */
+button {
+    background-color: #4248a1; /* Green background color */
+    color: white; /* White text color */
+    padding: 12px 24px; /* Internal spacing (top/bottom: 12px, left/right: 24px) */
+    border: none; /* Remove button border */
+    border-radius: 8px; /* Rounded corners */
+    margin: 10px 0; /* Space around the button (top/bottom: 10px, left/right: 0) */
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+  }
+  
+  /* Change button background color on hover */
+  button:hover {
+    background-color: #45a049; /* Darker green color on hover */
+  }

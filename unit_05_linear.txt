@@ -12,7 +12,9 @@ directed graph; a graph where edges have a direction
 undirected graph; a graph where edges have no direction
 flow conservation; the idea that the total flow into a vertex must equal the total flow out of a vertex
 stochastic matrices; matrices where each row represents a probability distribution, meaning all elements are non-negative and each row sums to 1
-doubly stochastic matrices; matrices that are both row-stochastic and column-stochastic, where both rows and columns sum to 1
+row-stochastic; a matrix where each row represents a probability distribution, meaning all elements are non-negative and each row sums to 1
+column-stochastic; a matrix where each column represents a probability distribution, meaning all elements are non-negative and each column sums to 1
+doubly stochastic matrices; matrices that are both row-stochastic and column-stochastic, where both rows and columns sum to 1. Conserving in and out flow.
 matrix exponentiation; raising a matrix to a power like A^5 = A @ A @ A @ A @ A
 integer matrix powers as repeated linear transformations; raising a matrix to an integer power means applying the linear transformation represented by the matrix multiple times
 matrix inversion; multiplying a vector by the inverse of a matrix undoes the transformation
@@ -52,7 +54,7 @@ Singular Value Decomposition (SVD); SVD is a matrix factorization method that de
 Singular Values in SVD; Singular values in Σ represent the magnitude of scaling applied by the transformation. They are arranged in descending order, indicating the importance of corresponding singular vectors in U and V^T.
 Interpreting U and V^T in SVD; Columns of U are left singular vectors, representing the transformation of the input space. Columns of V^T are right singular vectors, indicating the transformation in the output space. They form orthonormal bases for the input and output spaces, respectively.
 Pseudo-inverse using SVD; The pseudo-inverse A^+ of a matrix A (A^+ = VΣ^+U^T) can be computed using SVD. Σ^+ is obtained by taking the reciprocal of non-zero singular values and transposing the resulting diagonal matrix.
-Pseudo-Inverse; Denoted as A^+, is a generalization of matrix inversion for non-square matrices. For a matrix A = UΣV^T, the pseudo-inverse is computed as A^+ = VΣ^+U^T, where Σ^+ is obtained by taking the reciprocal of non-zero singular values and transposing the resulting diagonal matrix. It acts as a kind of 'generalized inverse' that allows solving approximate solutions to overdetermined systems of linear equations when A is not invertible. In essence, it provides a solution that minimizes the error, making it valuable in applications like least squares regression and solving inconsistent or underdetermined systems.
+Pseudo-Inverse; Denoted as A^+, is a generalization of matrix inversion for non-square matrices. In essence, it provides a solution that minimizes the error, making it valuable in applications like least squares regression and solving inconsistent or underdetermined systems.
 Low-Rank Approximation using SVD; SVD enables low-rank approximation of a matrix A. By retaining the first k singular values and their corresponding singular vectors (columns of U and V^T), a low-rank approximation A_k is obtained, minimizing the Frobenius norm ||A - A_k||.
 Condition Number; The condition number of a matrix A, κ(A), is the ratio of the largest to smallest singular value. A higher condition number indicates a ill-conditioned matrix, making numerical computations sensitive to small changes in input data.
 Applications in Recommendation Systems; SVD-based methods are used in recommendation systems, where user-item interaction matrices are factorized to discover latent patterns. Singular values capture the importance of latent features, aiding in personalized recommendations.
@@ -61,16 +63,17 @@ Consistent Linear System; A linear system is consistent if it has at least one s
 Independent Linear System; An independent system has a unique solution. The number of equations is equal to the number of unknowns, and the determinant of the coefficient matrix is non-zero.
 Dependent Linear System; A dependent system has infinitely many solutions. The number of equations is less than the number of unknowns, leading to multiple solutions that lie along a line, plane, or higher
 Solving Linear Systems using Matrix Inversion; For a square matrix A, the system Ax = b can be solved by multiplying both sides of the equation by A^(-1), the inverse of A. This gives the solution x = A^(-1)b, assuming A is invertible.
-Matrix Rank; The rank of a matrix A, denoted as rank(A), is the maximum number of linearly independent rows or columns in the matrix. It represents the dimension of the vector space spanned by the rows or columns of the matrix.
+Matrix Rank; The rank of a matrix A, denoted as rank(A), is the number of dimensions preserved when transforming by A. It represents the dimension of the vector space spanned by the rows or columns of the matrix. Not to be confused with tensor rank.
 Full Rank; A matrix which has Rank(A) = number of rows of A, and therefore is non-singular/invertible
 Deficient Rank; A matrix with Rank(A) < number of rows of A, and therefore is singular and cannot be inverted
-Null rank; A matrix with Rank(A) = 0, and therefore is singular and cannot be inverted
+Null rank; A matrix with Rank(A) = 0, and therefore is singular and cannot be inverted (the zero matrix)
 Calculation of Rank; The rank of a matrix can be determined using various methods including singular value decomposition (SVD) and counting the non-zero singular values.
 Rank and Eigenvalues; The rank of a square matrix A is equal to the number of non-zero eigenvalues. 
-Adjacency Matrix; An adjacency matrix is a square matrix used to represent a graph. For a graph with n vertices, the adjacency matrix A is an n x n matrix, where A[i][j] equals 1 if there is an edge between vertex i and vertex j, and 0 otherwise.
-Directed Graphs; In the adjacency matrix of a directed graph, A[i][j] equals 1 if there is a directed edge from vertex i to vertex j. For an unconnected pair of vertices, A[i][j] equals 0.
-Undirected Graphs; In the adjacency matrix of an undirected graph, A[i][j] equals 1 if there is an edge between vertex i and vertex j. Importantly, for undirected graphs, the matrix is symmetric, meaning A[i][j] = A[j][i] for all i and j.
-Weighted Graphs; For weighted graphs, the adjacency matrix may contain weights instead of just 1s and 0s. A[i][j] represents the weight of the edge between vertex i and vertex j. If there is no edge, the entry is typically set to a special value like infinity.
+Rank and singular values; The rank of a matrix A is equal to the number of non-zero singular values.
+Adjacency Matrix; An adjacency matrix is a square matrix used to represent a graph. For a graph with n vertices, the adjacency matrix A is an n x n matrix, where A[i, j] equals 1 if there is an edge between vertex i and vertex j, and 0 otherwise.
+Directed Graphs; In the adjacency matrix of a directed graph, A[i, j] equals 1 if there is a directed edge from vertex i to vertex j. For an unconnected pair of vertices, A[i, j] equals 0.
+Undirected Graphs; In the adjacency matrix of an undirected graph, A[i, j] equals 1 if there is an edge between vertex i and vertex j. Importantly, for undirected graphs, the matrix is symmetric, meaning A[i, j] = A[j, i] for all i and j.
+Weighted Graphs; For weighted graphs, the adjacency matrix may contain weights instead of just 1s and 0s. A[i, j] represents the weight of the edge between vertex i and vertex j. If there is no edge, the entry is typically set to a special value like infinity.
 Positive Definite Matrix; A symmetric matrix A is positive definite if, for any non-zero vector x, the quadratic form x^T Ax is positive, i.e., x^T Ax > 0. Positive definite matrices have all positive eigenvalues. Never flips the sign of a vector. Always invertible.
 Positive Semidefinite Matrix; A symmetric matrix A is positive semidefinite if, for any non-zero vector x, the quadratic form x^T Ax is non-negative, i.e., x^T Ax ≥ 0. Positive semidefinite matrices have non-negative eigenvalues. Never flips the sign of a vector.
 Negative Definite Matrix; A symmetric matrix A is negative definite if, for any non-zero vector x, the quadratic form x^T Ax is negative, i.e., x^T Ax < 0. Negative definite matrices have all negative eigenvalues. Always flips the sign of a vector. Always invertible.

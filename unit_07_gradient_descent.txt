@@ -17,7 +17,7 @@ Ridge Point;critical point where the function has higher values in multiple dire
 Plateau Point;critical point where the function has a flat region, making it challenging to determine the nature of the critical point
 Global Minimum;critical point where the function has the absolute lowest value over its entire domain, indicating the overall minimum point
 Global Maximum;critical point where the function has the absolute highest value over its entire domain, indicating the overall maximum point
-Hessian Matrix;matrix of second-order partial derivatives representing the curvature of a multivariable function
+Hessian Matrix;matrix of second-order partial derivatives representing the curvature of a multivariable function. Used to classify critical points.
 Curvature;measure of how fast a gradient is changing at a given point, indicating the shape of the curve
 Eigenvalues of the Hessian Matrix;values that indicate the direction and magnitude of the curvature at a critical point, positive for minima, negative for maxima, mixed for saddle points
 Positive Definite Hessian Matrix;all eigenvalues are positive, indicating a local minimum at the critical point
@@ -31,17 +31,17 @@ Lipschitz Continuous Function;function where the rate of change between any two 
 Examples of Lipschitz Continuous Functions;linear functions, functions with bounded derivatives, functions defined on closed intervals with continuous derivatives
 Functions Not Lipschitz Continuous;functions with unbounded slopes, functions with infinite oscillations, functions with vertical asymptotes
 Importance of Lipschitz continuity;Lipschitz continuity ensures the stability of optimization algorithms, allowing predictable convergence rates and preventing overshooting
-Automatic Differentiation;technique for efficiently and accurately evaluating derivatives of mathematical expressions, used in machine learning and scientific computing
+Automatic Differentiation;technique for efficiently and accurately evaluating derivatives of mathematical expressions in code, used in machine learning and scientific computing
 Forward Mode Automatic Differentiation;computes derivatives by applying the chain rule from the inside out, suitable for functions with few inputs and many outputs
 Backward Mode Automatic Differentiation;computes derivatives by applying the chain rule from the outside in, efficient for functions with many inputs and few outputs (common in deep learning)
 Computational Complexity of Automatic Differentiation;forward mode complexity is linear in the number of inputs, backward mode complexity is linear in the number of outputs
 `autograd` Package in Python;Python library providing automatic differentiation for NumPy-like operations, simplifying gradient computation for machine learning models
+grad(); an autograd function taking a (vector -> real) function as input and returning a (vector -> vector) function that computes the gradient of the input function
 Tape-based AD;a method of automatic differentiation where intermediate values and operations are recorded on a tape, enabling efficient calculation of gradients
 Static vs. Dynamic Computation Graphs;static graphs (common in TensorFlow) define the computation graph before runtime, dynamic graphs (common in PyTorch) allow defining the graph as operations are executed
-Dual Numbers;extension of real numbers used in automatic differentiation, representing both the function value and its derivative in a single number
 Issues with Numerical Differentiation;problems like choosing an appropriate step size (leading to numerical instability or precision issues), round-off errors, and the curse of dimensionality in high-dimensional spaces
 Numerical Differentiation;approximating derivatives by finite differences, involving small changes in input to calculate the rate of change of a function
 Symbolic Differentiation;computing exact derivatives using algebraic techniques, providing precise symbolic expressions for derivatives
 Automatic Differentiation;efficiently and accurately evaluating derivatives of mathematical expressions, utilized in machine learning and scientific computing for gradient-based optimization
-Gradient Descent Equation: θ = θ - ∂∇L(θ)
-Gradient Vector Equation (for a scalar function f(x, y, z)): ∇f(x, y, z) = (∂f/∂x, ∂f/∂y, ∂f/∂z)
+Gradient Descent Equation; $$θ = θ - ∂∇L(θ)$$
+Gradient Vector Equation (for a scalar function f(x, y, z)); $$∇f(x, y, z) = (∂f/∂x, ∂f/∂y, ∂f/∂z)$$

@@ -1,41 +1,41 @@
-Notation for a vector;\[ \bf{x} \]
-Notation for a matrix;\[ A \]
-Relative precision of floating point representation;\[ \epsilon = \frac{|\text{float}(x)-x|}{|x|} \]
-IEEE754 guarantee for relative precision (machine precision \(\epsilon\)) for a \(t\) bit mantissa floating point number;\[ \epsilon = \frac{1}{2}2^{-t} = 2^{-t-1} \]
-Addition of two vectors;\[ \vec{x} + \vec{y} = [x_1+y_1, x_2+y_2, \dots, x_n+y_n] \]
-Scalar multiplication of a vector;\[ c\vec{x}= [cx_1, cx_2, \dots, cx_n] \]
-Linear interpolation of two vectors;\[ \text{lerp}(\vec{x}, \vec{y}, \alpha) = \alpha \vec{x} + (1-\alpha) \vec{y} \]
-Cosine of angle between two vectors in terms of normalized dot product;\[ \cos \theta = \frac{{\bf x} \cdot {\bf y}}{{||{\bf x}|| \ ||{\bf y}||}} \]
-Dot product / inner product;\[ \vec{x}\cdot \vec{y} = \sum_i x_i y_i \]
-Mean vector;\[ \text{mean}(\vec{x_1}, \vec{x_2}, \dots, \vec{x_n}) = \frac{1}{N} \sum_i \vec{x_i} \]
-Definition of linearity (for a linear function \(f\) and equivalent matrix \(A\)); \[ f(\vec{x}+\vec{y}) = f(\vec{x}) + f(\vec{y}) = A({\bf x}+{\bf y}) = A{\bf x} + A{\bf y} \] \[ f(c\vec{x}) = cf(\vec{x}) = A(c{\bf x}) = cA{\bf x} \]
-Matrix addition; \[ A + B = \begin{bmatrix} a_{1,1} + b_{1,1} & a_{1,2} + b_{1,2} & \dots & a_{1,m} + b_{1,m} \\ a_{2,1} + b_{2,1} & a_{2,2} + b_{2,2} & \dots & a_{2,m} + b_{2,m} \\ \dots \\ a_{n,1} + b_{n,1} & a_{n,2} + b_{n,2} & \dots & a_{n,m} + b_{n,m} \end{bmatrix} \]
-Scalar matrix multiplication; \[ cA = \begin{bmatrix} ca_{1,1} & ca_{1,2} & \dots & ca_{1,m} \\ ca_{2,1} & ca_{2,2} & \dots & ca_{2,m} \\ \dots \\ ca_{n,1} & ca_{n,2} & \dots & ca_{n,m} \end{bmatrix} \]
-Matrix multiplication; \[ C_{ij}=\sum_k a_{ik} b_{kj} \]
-Outer product (matrix version); \[ \vec{x} \otimes \vec{y} = \vec{x}^T \vec{y} \]
-Inner product (matrix version); \[ \vec{x} \cdot \vec{y} = \vec{x}\vec{y^T} \]
-Power iteration for leading eigenvalue;\[ x_n = \frac{Ax_{n-1}}{\|Ax_{n-1}\|_\infty} \]
-Definition of eigenvalue and eigenvector;\[ A\vec{x_i} = \lambda_i \vec{x_i} \]
-Trace of a matrix;\[ \text{Tr}(A) = \sum_{i=1}^n \lambda_i \]
-Determinant of a matrix;\[ \text{det}(A) = \prod_{i=1}^n \lambda_i \]
-Linear system \(Ax = y\);\[ A\vec{x} = \vec{y} \]
-SVD definition;\[ A = U \Sigma V \]
-(pseudo-)inverse by SVD;\[ A^{-1} = V^T \Sigma^\dagger U^T \]
-Definition of optimization;\[ \theta^* = \argmin_{\theta\in\Theta} L(\theta) \]
-Objective function for approximation;\[ L(\theta) = \|y^\prime - y\| = \|f(\vec{x};\theta) - y\| \]
-Equality constraints for optimization;\[ \theta^* = \argmin_{\theta\in\Theta} L(\theta) \text{ subject to } c(\theta)=0 \]
-Inequality constraints for optimization;\[ \theta^* = \argmin_{\theta\in\Theta} L(\theta) \text{ subject to } c(\theta)\leq0 \]
-Gradient of a function;\[ \nabla L(\vec{\theta}) = \left[ \frac{\partial L(\vec{\theta})}{\partial \theta_1}, \frac{\partial L(\vec{\theta})}{\partial \theta_2}, \dots, \frac{\partial L(\vec{\theta})}{\partial \theta_n} \right] \]
-Gradient descent algorithm;\[ \vec{\theta^{(i+1)}} = \vec{\theta^{(i)}} - \delta \nabla L(\vec{\theta^{(i)}}) \]
-Definition of differentiation;\[ \frac{df(x)}{dx} = \lim_{h \rightarrow 0} \frac{f(x+h) - f(x-h)}{2h} \]
-Hessian matrix;\[ \nabla \nabla L(\vec{\theta}) = \nabla^2 L(\vec{\theta}) = \begin{bmatrix} \frac{\partial^2 L(\vec{\theta})}{\partial \theta_1^2} & \frac{\partial^2 L(\vec{\theta})}{\partial \theta_1\partial \theta_2} & \frac{\partial^2 L(\vec{\theta})}{\partial \theta_1\partial \theta_3} & \dots & \frac{\partial^2 L(\vec{\theta})}{\partial \theta_1\partial \theta_n}\\ \frac{\partial^2 L(\vec{\theta})}{\partial \theta_2\partial\theta_1} & \frac{\partial^2 L(\vec{\theta})}{\partial \theta_2^2} & \frac{\partial^2 L(\vec{\theta})}{\partial \theta_2\partial \theta_3} & \dots & \frac{\partial^2 L(\vec{\theta})}{\partial \theta_2\partial \theta_n}\\ \dots\\ \frac{\partial^2 L(\vec{\theta})}{\partial \theta_n\partial\theta_1} & \frac{\partial^2 L(\vec{\theta})}{\partial \theta_n\partial \theta_2} & \frac{\partial^2 L(\vec{\theta})}{\partial \theta_n\partial \theta_3} & \dots & \frac{\partial^2 L(\vec{\theta})}{\partial \theta_n^2}\\ \end{bmatrix} \]
-Convex sum of sub-objective functions;\[ L(\theta) = \lambda_1 L_1(\theta) + \lambda_2 L_2(\theta) + \dots + \lambda_n L_n(\theta) \]
-Expectation of a random variable;\[ \expect{X} = \int_x x\ f_X(x) dx \]
-Expectation of a function of a random variable;\[ \expect{g(X)} = \int_x f_X(x) g(x) dx \]
-Definition of Nyquist limit;\[ f_n = \frac{f_s}{2} \]
-Signal to noise ratio;\[ \text{SNR} = \frac{S}{N} \]
-SNR in dB;\[ \text{SNR}_{dB} = 10 \log_{10} \left( \frac{S}{N} \right) \]
-Exponential smoothing;\[ y[t] = \alpha y[t-1] + (1-\alpha) x[t] \]
-Convolution of sampled signals;\[ (x * y)[n] = \sum_{m=-M}^{M} x[n] y[n-m] \]
-Convolution of sampled signals;\[ (x * y)[n] = \sum_{m=-M}^{M} x[n] y[n-m] \]
-Discrete Fourier Transform (DFT) equation;\[ X[k] = \sum_{n=0}^{N-1} x[n] e^{-\frac{2\pi i}{N}kn} \]
+Notation for a vector;$$ \bf{x} $$
+Notation for a matrix;$$ A $$
+Relative precision of floating point representation;$$ \epsilon = \frac{|\text{float}(x)-x|}{|x|} $$
+IEEE754 guarantee for relative precision (machine precision \(\epsilon\)) for a \(t\) bit mantissa floating point number;$$ \epsilon = \frac{1}{2}2^{-t} = 2^{-t-1} $$
+Addition of two vectors;$$ \vec{x} + \vec{y} = [x_1+y_1, x_2+y_2, \dots, x_n+y_n] $$
+Scalar multiplication of a vector;$$ c\vec{x}= [cx_1, cx_2, \dots, cx_n] $$
+Linear interpolation of two vectors;$$ \text{lerp}(\vec{x}, \vec{y}, \alpha) = \alpha \vec{x} + (1-\alpha) \vec{y} $$
+Cosine of angle between two vectors in terms of normalized dot product;$$ \cos \theta = \frac{{\bf x} \cdot {\bf y}}{{||{\bf x}|| \ ||{\bf y}||}} $$
+Dot product / inner product;$$ \vec{x}\cdot \vec{y} = \sum_i x_i y_i $$
+Mean vector;$$ \text{mean}(\vec{x_1}, \vec{x_2}, \dots, \vec{x_n}) = \frac{1}{N} \sum_i \vec{x_i} $$
+Definition of linearity (for a linear function \(f\) and equivalent matrix \(A\)); $$ f(\vec{x}+\vec{y}) = f(\vec{x}) + f(\vec{y}) = A({\bf x}+{\bf y}) = A{\bf x} + A{\bf y} $$ $$ f(c\vec{x}) = cf(\vec{x}) = A(c{\bf x}) = cA{\bf x} $$
+Matrix addition; $$ A + B = \begin{bmatrix} a_{1,1} + b_{1,1} & a_{1,2} + b_{1,2} & \dots & a_{1,m} + b_{1,m} \\ a_{2,1} + b_{2,1} & a_{2,2} + b_{2,2} & \dots & a_{2,m} + b_{2,m} \\ \dots \\ a_{n,1} + b_{n,1} & a_{n,2} + b_{n,2} & \dots & a_{n,m} + b_{n,m} \end{bmatrix} $$
+Scalar matrix multiplication; $$ cA = \begin{bmatrix} ca_{1,1} & ca_{1,2} & \dots & ca_{1,m} \\ ca_{2,1} & ca_{2,2} & \dots & ca_{2,m} \\ \dots \\ ca_{n,1} & ca_{n,2} & \dots & ca_{n,m} \end{bmatrix} $$
+Matrix multiplication; $$ C_{ij}=\sum_k a_{ik} b_{kj} $$
+Outer product (matrix version); $$ \vec{x} \otimes \vec{y} = \vec{x}^T \vec{y} $$
+Inner product (matrix version); $$ \vec{x} \cdot \vec{y} = \vec{x}\vec{y^T} $$
+Power iteration for leading eigenvalue;$$x_n = \frac{Ax_{n-1}}{\|Ax_{n-1}\|_\infty}$$
+Definition of eigenvalue and eigenvector;$$ A\vec{x_i} = \lambda_i \vec{x_i} $$
+Trace of a matrix; $$\text{Tr}(A) = \sum_{i=1}^{n} \lambda_i$$
+Determinant of a matrix;$$ \text{det}(A) = \prod_{i=1}^n \lambda_i $$
+Linear system \(Ax = y\);$$ A\vec{x} = \vec{y} $$
+SVD definition;$$ A = U \Sigma V $$
+(pseudo-)inverse by SVD;$$ A^{-1} = V^T \Sigma^\dagger U^T $$
+Definition of optimization;$$ \theta^* = \argmin{\theta\in\Theta} L(\theta) $$
+Objective function for approximation;$$ L(\theta) = \|y^\prime - y\| = \|f(\vec{x};\theta) - y\| $$
+Equality constraints for optimization;$$ \theta^t = \argmin{\theta\in\Theta} L(\theta) \text{ subject to } c(\theta)=0 $$
+Inequality constraints for optimization;$$ \theta^* = \argmin{\theta\in\Theta} L(\theta) \text{ subject to } c(\theta)\leq0 $$
+Gradient of a function;$$ \nabla L(\vec{\theta}) = \left[ \frac{\partial L(\vec{\theta})}{\partial \theta_1}, \frac{\partial L(\vec{\theta})}{\partial \theta_2}, \dots, \frac{\partial L(\vec{\theta})}{\partial \theta_n} \right] $$
+Gradient descent algorithm;$$ \vec{\theta^{(i+1)}} = \vec{\theta^{(i)}} - \delta \nabla L(\vec{\theta^{(i)}}) $$
+Definition of differentiation;$$ \frac{df(x)}{dx} = \lim_{h \rightarrow 0} \frac{f(x+h) - f(x-h)}{2h} $$
+Hessian matrix;$$ \nabla \nabla L(\vec{\theta}) = \nabla^2 L(\vec{\theta}) = \begin{bmatrix} \frac{\partial^2 L(\vec{\theta})}{\partial \theta_1^2} & \frac{\partial^2 L(\vec{\theta})}{\partial \theta_1\partial \theta_2} & \frac{\partial^2 L(\vec{\theta})}{\partial \theta_1\partial \theta_3} & \dots & \frac{\partial^2 L(\vec{\theta})}{\partial \theta_1\partial \theta_n}\\ \frac{\partial^2 L(\vec{\theta})}{\partial \theta_2\partial\theta_1} & \frac{\partial^2 L(\vec{\theta})}{\partial \theta_2^2} & \frac{\partial^2 L(\vec{\theta})}{\partial \theta_2\partial \theta_3} & \dots & \frac{\partial^2 L(\vec{\theta})}{\partial \theta_2\partial \theta_n}\\ \dots\\ \frac{\partial^2 L(\vec{\theta})}{\partial \theta_n\partial\theta_1} & \frac{\partial^2 L(\vec{\theta})}{\partial \theta_n\partial \theta_2} & \frac{\partial^2 L(\vec{\theta})}{\partial \theta_n\partial \theta_3} & \dots & \frac{\partial^2 L(\vec{\theta})}{\partial \theta_n^2}\\ \end{bmatrix} $$
+Convex sum of sub-objective functions;$$ L(\theta) = \lambda_1 L_1(\theta) + \lambda_2 L_2(\theta) + \dots + \lambda_n L_n(\theta) $$
+Expectation of a random variable;$$ \expect{X} = \int_x x\ f_X(x) dx $$
+Expectation of a function of a random variable;$$ \expect{g(X)} = \int_x f_X(x) g(x) dx $$
+Definition of Nyquist limit;$$ f_n = \frac{f_s}{2} $$
+Signal to noise ratio;$$ SNR = \frac{S}{N} $$
+SNR in dB;$$ SNR_{dB} = 10 \log_{10} \left( \frac{S}{N} \right) $$
+Exponential smoothing;$$ y[t] = \alpha y[t-1] + (1-\alpha) x[t] $$
+Convolution of sampled signals;$$ (x * y)[n] = \sum_{m=-M}^{M} x[n] y[n-m] $$
+Convolution of sampled signals;$$ (x * y)[n] = \sum_{m=-M}^{M} x[n] y[n-m] $$
+Discrete Fourier Transform (DFT) equation;$$ X[k] = \sum_{n=0}^{N-1} x[n] e^{-\frac{2\pi i}{N}kn} $$

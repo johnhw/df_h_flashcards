@@ -2,15 +2,15 @@ sign bit;the leftmost bit in a floating-point number, indicating its positive (0
 mantissa (or significand);the bits in a floating-point number representing the precise fractional part, excluding the implicit leading 1 bit
 exponent;the bits in a floating-point number determining the scale of the number (e.g., 2^exponent)
 exponent bias;an offset value applied to the exponent to allow for representation of both positive and negative exponents in a biased manner
+strided array; a way of laying out data in memory where the elements are stored in a flat array, but the strides allow for (apparent) multidimensional indexing.
 strides in NumPy;describe the number of bytes to jump to get to the next element in each dimension of an array
-C ordering (row-major);arrays are stored in memory row by row, with the rightmost index changing fastest
-Fortran ordering (column-major);arrays are stored in memory column by column, with the leftmost index changing fastest
+C ordering (row-major);arrays are stored in memory "row by row", with the rightmost index changing fastest
+Fortran ordering (column-major);arrays are stored in memory "column by column", with the leftmost index changing fastest
 dope vector;contains information about an array's shape, strides, data type, and other metadata
 advantages of C ordering;efficient for row-wise traversal and matches how most programming languages access arrays
 advantages of Fortran ordering;efficient for column-wise traversal, suits mathematical and engineering computations
 dope vector for a 3D array;example: shape=(3, 4, 5), strides=(20, 5, 1), indicating how to move in memory for each dimension
 effect of changing strides on array iteration;changing strides can modify the order in which array elements are accessed in memory
-C ordering in nested arrays;innermost arrays follow C ordering, useful for 2D arrays of varying sizes within a 3D array
 Fortran ordering in nested arrays;innermost arrays follow Fortran ordering, beneficial for numerical simulations requiring column-wise computations
 Illiffe vector;alternative to dope vectors, representing shape and strides as nested lists
 IEEE 754 exceptions;special conditions that occur during floating-point arithmetic operations
@@ -33,24 +33,23 @@ handling NaN in data cleaning;NaN values in datasets can be replaced, removed, o
 IEEE 754 standard for NaN;defines the bit pattern used to represent NaN, ensuring consistent handling across different systems
 NaN in mathematical functions;many functions return NaN for undefined inputs, allowing continued execution of programs
 NaN in statistical calculations;NaN values in datasets can be skipped during statistical calculations to obtain meaningful results
-NaN (Not a Number) bit pattern;In 64-bit float: [sign][all one exponent][non-zero mantiassa]
-Inf (Infinity) bit pattern;In 64-bit float: [sign][all one exponent][all zero mantiassa]
+NaN (Not a Number) bit pattern;In 64-bit float: [sign][all one exponent][non-zero mantissa]
+Inf (Infinity) bit pattern;In 64-bit float: [sign][all one exponent][all zero mantissa]
 Positive zero bit pattern;In 64-bit float: [0][all zeros]
 Negative zero bit pattern;In 64-bit float: [1][all-zeros]
 Signed zero issue;Arises due to the distinction between positive and negative zero, impacting certain calculations
-Bit pattern for signaling NaN;Specific bit patterns in NaN are designated for signaling NaNs, indicating errors when used in operations
-Bit pattern for quiet NaN;Quiet NaNs allow operations to continue without raising exceptions, ensuring smooth program execution
 Reshape for Promotion;Use np.reshape() to change the shape of an array, promoting or demoting dimensions as needed.
-Squeeze for Reduction;Use np.squeeze() to remove single-dimensional entries from the shape of an array, reducing its dimensions.
-Newaxis for Promotion;Use np.newaxis or None to add new dimensions, promoting arrays to higher dimensions.
-None for Promotion;Using None in slicing/indexing adds a new axis, promoting arrays to higher dimensions.
+Squeeze for Reduction;Use np.squeeze() to remove (all) single-dimensional entries from the shape of an array, reducing its dimensions. E.g. a (3,1,4,1) array becomes a (3,4) array.
+Newaxis for Promotion;Use np.newaxis or None to add new dimensions, promoting arrays to higher dimensions. x[:, np.newaxis] promotes x from 1D to 2D.
+None for Promotion;Using None in slicing/indexing adds a new axis, promoting arrays to higher dimensions. x[:, None] promotes x from 1D to 2D.
 Ravel for Flattening;Use np.ravel() to flatten multi-dimensional arrays into one-dimensional arrays.
 Flatten for Flattening;Use np.ndarray.flatten() to flatten arrays into one-dimensional arrays (returns a copy).
 Einsum Function;np.einsum() allows for efficient contraction and summation of multidimensional arrays using Einstein's summation convention.
 Einsum Notation;Uses subscripts to define input and output array dimensions, facilitating complex array operations in a concise manner.
-Einsum Example;Example: np.einsum('ij,jk->ik', A, B) performs matrix multiplication of A and B, resulting in a new array C.
+Einsum Example;Example: np.einsum('ijk->jik', A, B) swaps the first two axes of A and B and leaves the last axis unchanged.
 Swapaxes Function;np.swapaxes() swaps two axes of an array, changing the shape and layout of the array in memory.
 Swapaxes Example;Example: np.swapaxes(arr, axis1, axis2) swaps the specified axes (axis1 and axis2) of the input array.
+np.meshgrid(); grids=np.meshgrid(*spacings) creates coordinate matrices from coordinate vectors, facilitating vectorized evaluations of functions on a grid.
 Benefits of Einsum;Enables efficient handling of complex array operations, reducing the need for explicit loops and intermediate arrays.
 Machine Epsilon;Machine epsilon (eps) is the smallest positive floating-point number such that 1.0 + eps != 1.0.
 Double Precision Machine Epsilon;For IEEE 754 double precision (float64), machine epsilon is approximately 2.220446049250313e-16.

@@ -17,7 +17,7 @@ discrete random variable; a random variable that can only take distinct, separat
 continuous random variable; a random variable that can take any value over a continuous domain
 probability mass function (PMF); a function that describes the probabilities of discrete random variables taking specific values
 probability density function (PDF); a function that describes the probabilities of continuous random variables falling within specific intervals via densities
-density; a non-negative function that describes the relative likelihood of a continuous random variable taking on a given value
+density; a non-negative value that describes the relative likelihood of a continuous random variable taking on a given value. Not a probability. May be greater than 1.
 axioms of probability; fundamental rules governing probability theory, including unitarity, non-negativity, and additivity (sum rule)
 axiom of unitarity; the total probability of all possible outcomes in a sample space is equal to 1
 axiom of non-negativity; probabilities are never negative and can only range from 0 to 1

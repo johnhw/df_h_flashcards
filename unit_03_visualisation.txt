@@ -47,7 +47,7 @@ dot plot; a simple chart where each data point is represented by a dot along a s
 means; the arithmetic average of a set of values, calculated by adding up all values and dividing by the total number of values
 medians; the middle value in a sorted dataset, separating the higher half from the lower half of the data points
 error bars; graphical representations of the variability or uncertainty of data points in a plot, typically indicating the standard deviation or confidence intervals
-confidence intervals; a range of values that is likely to contain an unknown population parameter, providing a measure of the uncertainty associated with a sample estimate
+confidence intervals; a range of values that is likely to contain an unknown population parameter, providing a measure of the uncertainty associated with a sample estimate. Often used as error bars (e.g. 95% confidence interval)
 standard deviation; a measure of the dispersion or spread of a set of values, indicating how much the values deviate from the mean
 standard error; an estimate of the standard deviation of a sample population, indicating the variability of the sample mean. Equal to the standard deviation divided by the square root of the sample size
 uncertainty representation; the visual depiction of the degree of confidence or reliability associated with data points or statistical estimates in a plot

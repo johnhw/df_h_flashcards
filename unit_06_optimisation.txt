@@ -6,12 +6,12 @@ inequality constraints; constraints that define conditions that must be satisfie
 penalisation; technique to handle constraints by adding penalty terms to the objective function for violating constraints
 penalty function; a mathematical function that quantifies the violation of constraints or undesirable parameter values, influencing the optimization process
 approximation form of optimization; optimization problems where the objective function is an approximation, often used in machine learning tasks
-penalty parameter (lambda or alpha); a tuning parameter that controls the strength of penalization, balancing between fitting the data and penalizing the complexity of the model
-approximation form of optimization; L(\theta) = \sum \| y_i - f(x_i, \theta) \| represents the approximation form of optimization where it minimizes the sum of absolute differences between observed and predicted values
-differentiability in optimization; property of a function that allows it to have derivatives at certain points, crucial for gradient-based optimization algorithms
+penalty parameter; a tuning parameter (usually $\lambda$) that controls the strength of penalization, balancing between fitting the data and penalizing the complexity of the model
+approximation form of optimization; $$L(\theta) = \sum \| y_i - f(x_i, \theta) \|$$ represents the approximation form of optimization where it minimizes the sum of absolute differences between observed and predicted values
+differentiability in optimization; property of a function that allows it to have derivatives, crucial for gradient-based optimization algorithms
 local optimum; a solution that is optimal within a specific neighborhood, but not necessarily the best solution globally
 global optimum; the best possible solution across the entire feasible region of an optimization problem
-convexity in optimization; a property of the objective function where any line segment connecting two points on the graph lies above the graph
+convexity in optimization; a property of the objective function where any line segment connecting two points on the graph lies above the graph, equivalent to a single global optimum
 saddle point; a point in the objective function where it is neither a local minimum nor a local maximum
 linear regression in optimization framework; modeling linear regression as an optimization problem to find the best-fitting line for given data points
 convex sums; technique of aggregating multiple objective functions into a single objective function by taking a weighted sum
@@ -30,19 +30,20 @@ convex functions; functions where the line segment between any two points on the
 concave functions; functions where the line segment between any two points on the graph lies below the graph itself
 convex combination; a combination of vectors where the weights are non-negative and sum up to 1
 continuity; a property of functions where small changes in the input result in small changes in the output
+discontinous; a property of functions where arbitarily small changes in the input can result in arbitarily large changes in the output
 C^0 continuity; a function is continuous, but not necessarily differentiable (has no gaps or jumps in the graph)
 C^1 continuity; a function is continuously differentiable (has a continuous first derivative)
 C^2 continuity; a function has a continuous first and second derivative
-C^infinity continuity; a function has every derivative continuous
+C^∞ continuity; a function has every derivative continuous
 differentiability in optimization; a property of functions where the derivative at a point exists, indicating the rate of change or gradient
 continuity and differentiability relationship; all differentiable functions are continuous, but not all continuous functions are differentiable
 functions that are continuous but not differentiable; examples include the absolute value function and the square root function
 functions that are both continuous and differentiable; examples include linear functions, sine, cosine, x^2
 functions that are neither continuous nor differentiable; examples include step functions 
-discontinuous function example; f(x) = 1/x (reciprocal function) -- discontinuous at x = 0
-C^0 continuous function example; f(x) = |x| (absolute value function) -- derivative is undefined at x = 0
-C^1 continuous function example; f(x) = x^2 (quadratic function)
-C^2 continuous function example; f(x) = 3x^3 - 2x^2 + 5x - 1 (cubic function)
+discontinuous function example; $$f(x) = 1/x$$ (reciprocal function) -- discontinuous at x = 0
+C^0 continuous function example; $$f(x) = |x|$$ (absolute value function) -- derivative is undefined at x = 0
+C^1 continuous function example; $$f(x) = x^2$$ (quadratic function)
+C^2 continuous function example; $$f(x) = 3x^3 - 2x^2 + 5x - 1$$ (cubic function)
 C^∞ (infinitely differentiable) continuous function example; f(x) = e^x (exponential function)
 temperature; a metaheuristic, controlling the likelihood of accepting worse solutions to escape local optima
 memory; a metaheuristic where an optimisation algorithm remembers past solutions and use them to guide the search process

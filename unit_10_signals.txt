@@ -39,8 +39,9 @@ impulse response recovery;process of determining a system's behavior by analyzin
 impulse response recovery methods;deconvolution techniques, Fourier transform, and inverse filtering
 deconvolution;mathematical operation used to recover the original signal from its convolution with an impulse response
 impulse response recovery challenges;noise interference, finite duration of signals, and ill-conditioned systems
-irac delta function;mathematical function representing an idealized impulse at a single point in space or time
+Dirac delta function;mathematical function representing an idealized impulse at a single point in space or time ("spike" function)
 properties of Dirac delta function;integral over the entire real line is 1, and it is zero everywhere except at 0
+Dirac delta in convolution; Dirac delta function is the identity element in convolution, i.e. f * δ = f
 nonlinear filtering;filtering technique where the computation is anything other than a weighted sum
 median filtering;nonlinear filtering method where the output is the median value of the neighboring elements in the window
 advantages of median filtering;eliminates spike noise, preserves edges, and is computationally efficient
@@ -52,7 +53,10 @@ phase angle of a sinusoid;offset in the horizontal direction, indicating the sta
 Fourier Transform;mathematical technique that transforms a time-domain signal into its frequency components
 continuous Fourier Transform equation;F(ω) = ∫[from -∞ to ∞] f(t) * e^(-jωt) dt, where F(ω) represents the frequency spectrum of f(t)
 Discrete Fourier Transform (DFT);discretized version of the Fourier Transform, applied to sampled, discrete-time signals
-DFT equation;X(k) = Σ[n=0 to N-1] x(n) * e^(-j(2π/N)kn), where X(k) represents the frequency component at index k
+DFT equation;X(k) = Σ[n=0 to N-1] x(n) * e^(-j(2π/N)kn), where X(k) represents the frequency component at index k. X(k) is a complex number with magnitude and phase.
+Complex number; a number that can be expressed in the form a + bi, where a and b are real numbers, and i is the imaginary unit, satisfying i^2 = -1
+magnitude and phase angle; two components of a complex number, representing its amplitude and phase angle. Amplitude = sqrt(a^2 + b^2), Phase = arctan(b/a)
+Argand diagram; a graphical representation of complex numbers as points in the complex plane, with the real part on the x-axis and the imaginary part on the y-axis
 Fast Fourier Transform (FFT);algorithm for efficiently computing the Discrete Fourier Transform, reducing time complexity from O(N^2) to O(N log N)
 time complexity of DFT;O(N^2), where N is the number of samples in the input signal
 time complexity of FFT;O(N log N), significantly faster than the naive DFT calculation

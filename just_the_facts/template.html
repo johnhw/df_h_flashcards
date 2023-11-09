@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="just_the_facts.css">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Just the facts</title>
+</head>
+
+$$\renewcommand{\vec}[1]{\mathbf{#1}}$$
+$$\newcommand{\argmin}{\operatorname{argmin}}$$
+$$\newcommand{\expect}[1]{\mathbb{E}\left[#1\right]}$$
+$$\newcommand{\real}{\mathbb{R}}$$
+<style>
+    {
+            {
+            STYLE
+        }
+    }
+</style>
+
+<body>
+    <div class="title-bar">
+        <h1>DF(H) Just the Facts           
+        </h1>
+        
+        <button id="hideButton">Hide all</button>
+        <button id="showButton">Show all</button>
+    </div>
+
+
+
+    {{CONTENT}}
+
+
+</body>
+
+<script>
+    document.querySelectorAll('.card').forEach(card => {    
+    card.addEventListener('click', function() {
+        
+    const cardContent = this.querySelector('.bottom-half p');
+    console.log(cardContent);
+    //cardContent.style.display = 'block';
+
+    // Use jQuery fadeIn function for a fade-in effect
+    //$(cardContent).fadeIn(1000);
+    cardContent.style.opacity = 1; 
+
+    const cardTop = this.querySelector('.top-half');
+    cardTop.classList.add('top-half-clicked');
+  });
+});
+
+
+// hide all button
+// Add event listener for the Reset button
+document.getElementById('hideButton').addEventListener('click', function() {
+  // Set opacity of all .bottom-half p elements back to 0
+  document.querySelectorAll('.bottom-half p').forEach(p => {
+    p.style.opacity = 0;
+  });
+  document.querySelectorAll('.top-half').forEach(p => {
+    p.classList.remove('top-half-clicked');
+  });
+});
+
+// show all button
+// Add event listener for the Reset button
+document.getElementById('showButton').addEventListener('click', function() {
+  // Set opacity of all .bottom-half p elements back to 0
+  document.querySelectorAll('.bottom-half p').forEach(p => {
+    p.style.opacity = 1 ;
+  });
+  document.querySelectorAll('.top-half').forEach(p => {
+    p.classList.remove('top-half-clicked');
+  });
+});
+
+</script>
+
+</html>
