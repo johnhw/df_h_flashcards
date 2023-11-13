@@ -404,6 +404,780 @@ $$\newcommand{\real}{\mathbb{R}}$$
                     <p>$$ X[k] = \sum_{n=0}^{N-1} x[n] e^{-\frac{2\pi i}{N}kn} $$</p>
                 </div>
             </div>
+        </div><div class="separator"> <div class="separator-text">Numpy</div></div><div class='card-container'>
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">@ (Matrix Multiplication Operator)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Performs matrix multiplication between two arrays. Example: result = x @ y computes the matrix multiplication of arrays x and y.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">& (Bitwise AND operator)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Performs element-wise logical AND between two arrays. Example: x & y computes the element-wise logical AND between arrays x and y.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">| (Bitwise OR operator)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Performs element-wise logical OR between two arrays. Example: x | y computes the element-wise logical OR between arrays x and y.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">~ (Bitwise NOT operator)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Performs element-wise logical NOT on an array. Example: ~x computes the element-wise logical NOT of array x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">anp.grad(fn)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> with autograd takes a function fn and returns a function that computes the gradient of fn with respect to its inputs. Example: grad_fn = grad(fn) returns a function grad_fn that computes the gradient of fn with respect to its inputs.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">array.astype(dtype)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Casts the array to the specified data type. Example: x.astype(np.float64) converts the array x to the data type float64.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">array.dtype</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns the data type of the array elements. Example: x.dtype returns the data type of elements in array x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">array.ndim</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns the number of array dimensions. Example: x.ndim returns the number of dimensions of array x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">array.ravel() or array.flatten()</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns a flattened array containing the same elements as the input array. Example: x.ravel() returns a flattened version of array x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">array.shape</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns a tuple representing the dimensions of the array. Example: x.shape returns the dimensions of array x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">array.strides</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns a tuple of bytes to step in each dimension when traversing an array. Example: x.strides returns the strides of array x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">array.T</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns the transposed array. Example: x.T transposes the array x. For higher-dimensional arrays, reverses the order of the axes.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">array[:, np.newaxis] or array[:, None]: Adds a new axis to an array. Example: x[:, np.newaxis] adds a new (singleton) axis at the end of array x.</p>
+                </div>
+                <div class="bottom-half">
+                    <p></p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">array[..., 0]</p>
+                </div>
+                <div class="bottom-half">
+                    <p> The ellipsis (...) represents as many colons as needed to produce a complete indexing tuple. Example: x[..., 0] returns the first element of the last axis of array x. </p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">array[condition]</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns an array containing elements from the input array where the condition is True. Example: x[x > 0] returns an array containing all positive elements of x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">array[index_array]</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns an array containing elements from the input array at the specified indices. Example: x[[0, 2, 4]] returns an array containing the elements at indices 0, 2, and 4 of x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">array[start:stop:step]</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Slice elements from index start to stop-1 with a step size of step. Negative indices are interpreted as counting from the end of the array. Example: x[1:5:2] returns every other element from index 1 to 4 in array x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">array.real and array.imag</p>
+                </div>
+                <div class="bottom-half">
+                    <p> return the real and imaginary parts of a complex array. Example: x.real returns the real part of array x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">evals, evecs = np.linalg.eigh(a)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Computes the eigenvalues and eigenvectors of a real symmetric matrix. Example: np.linalg.eigh(a) computes eigenvalues and eigenvectors of a.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.all(condition, [axis=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns True if all elements of the input array satisfy the condition. Optionally, you can specify the axis along which to operate. Example: np.all(x > 0, axis=1) checks if all elements in each row of x are greater than 0.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.allclose(a, b, [atol=, rtol=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns True if all elements of two arrays are approximately equal. atol and rtol are optional parameters specifying the absolute and relative tolerances, respectively. Example: np.allclose(x, y, atol=1e-10, rtol=1e-6) checks if arrays x and y are approximately equal within the specified tolerances.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.any(condition, [axis=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns True if any element of the input array satisfies the condition. Optionally, you can specify the axis along which to operate. Example: np.any(x > 0, axis=0) checks if any element in each column of x is greater than 0.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.argmax(x, [axis=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns the indices of the maximum values along an axis. Optionally, you can specify the axis. Example: np.argmax(x, axis=0) gives the indices of the maximum values along each column.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.argmin(x, [axis=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns the indices of the minimum values along an axis. Optionally, you can specify the axis. Example: np.argmin(x, axis=1) gives the indices of the minimum values along each row.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.argsort(x, [axis=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns the indices that would sort an array. Optionally, you can specify the axis. Example: np.argsort(x) gives the indices that would sort each row of the array.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.clip(x, a_min, a_max)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Clips (limits) the values in an array. Example: np.clip(x, 0, 1) clips the values in x to be between 0 and 1.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.concatenate((a1, a2, ...), axis=)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Join a sequence of arrays  along an existing axis. Example: np.concatenate((x, y), axis=0) concatenates arrays x and y along the first axis.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.count_nonzero(x, [axis=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Counts the number of non-zero values in the array. Optionally, you can specify the axis along which to operate. Example: np.count_nonzero(x, axis=0) counts the number of non-zero values in each column of x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.cov(x, [ rowvar=False])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Estimates the covariance matrix of a dataset. x and y are the variables to be considered. rowvar specifies whether each row represents a variable (True) or a sample (False). Example: np.cov(x, rowvar=False) computes the covariance matrix of  x arranged as columns.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.cumprod(x, [axis=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns the cumulative product of the elements along a given axis. Example: np.cumprod(x) returns the cumulative product of elements in array x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.cumsum(x, [axis=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns the cumulative sum of the elements along a given axis. Example: np.cumsum(x) returns the cumulative sum of elements in array x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.diag(x)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Extracts the diagonal of a matrix *orconverts a vector into a diagonal matrix. Example: np.diag(x) returns the diagonal of matrix x if x is a matrix.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.diff(x, [n=, axis=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Calculates the n-th discrete difference along the given axis. Example: np.diff(x, n=2) returns the second discrete difference of elements in array x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.digitize(x, bins)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns the indices of the bins to which each value in input array belongs. Example: np.digitize(x, bins) returns the indices of the bins to which each value in x belongs.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.einsum(subscripts, *operands)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Evaluates the Einstein summation convention on the operands. Example: np.einsum('ij -> ji', a) transposes a matrix a. Letters are used to label axes. </p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.extract(condition, x)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns the elements of an array that satisfy a condition. Example: np.extract(x > 0, x) returns the elements of array x that are greater than 0. Same as x[x > 0].</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.flatten(x)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns a flattened array containing the same elements as the input array. Example: np.flatten(x) returns a flattened version of array x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.fft(x)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Computes the one-dimensional discrete Fourier Transform. Example: np.fft(x) computes the one-dimensional discrete Fourier Transform of array x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.fftfreq(x) and np.rfftfreq(x)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Computes the sample frequencies for a discrete Fourier Transform. Example: np.fftfreq(x) computes the sample frequencies for a discrete Fourier Transform of array x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.floor(x) or np.ceil(x)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns the floor or ceiling (nearest whole number lesser/greater) of each element in the input array. Example: np.floor(x) returns the floor of each element in array x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.full(shape, fill_value, [dtype=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns a new array of given shape and type, filled with a constant value. Example: np.full((3, 3), 5.0) creates a 3x3 array filled with the value 5.0.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.gradient(x, [edge_order=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns the gradient of an N-dimensional array. edge_order specifies the order of the edge used to calculate the gradient. Example: np.gradient(x, edge_order=2) returns the gradient of array x using a second-order edge.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.histogram(x, [bins=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Computes the histogram of a set of data. bins specifies the number of bins to use. Example: np.histogram(x, bins=10) computes the histogram of array x using 10 bins.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.ifft(x)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Computes the one-dimensional inverse discrete Fourier Transform. Example: np.ifft(x) computes the one-dimensional inverse discrete Fourier Transform of array x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.is[finite, inf, nan](x)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns a boolean array indicating which elements are finite (not infinity or NaN), infinite, or Nan. Example: np.isfinite(x) returns a boolean array indicating which elements of x are finite. np.isnan(x) returns a boolean array indicating which elements of x are NaN.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.linspace(start, stop, steps)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns evenly spaced numbers over a specified interval. Example: np.linspace(0, 1, 11) returns 11 evenly spaced numbers between 0 and 1.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.linalg.cond(a, [p=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Computes the condition number of a matrix. p is an optional parameter specifying the norm used in the calculation (default is 2-norm). Example: np.linalg.cond(a, p=2) computes the 2-norm condition number of matrix a.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.linalg.det(a)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Computes the determinant of a square matrix. Example: np.linalg.det(a) computes the determinant of matrix a.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.linalg.inv(a)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Computes the multiplicative inverse of a matrix. Example: np.linalg.inv(a) computes the inverse of matrix a if it exists. Raises an error if the matrix is singular or not square.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.linalg.norm(x, [ord=, axis=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Computes the norm of a vector or matrix. ord specifies the type of norm to compute (default is L2 norm). axis specifies the axis that is reduced over. Example: np.linalg.norm(x, ord=2, axis=1) computes L2 norms of rows in a matrix.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.linalg.pinv(a)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Computes the (Moore-Penrose) pseudo-inverse of a matrix. rcond is an optional parameter specifying the singular values below which singular values are considered zero. Example: np.linalg.pinv(a, rcond=1e-15) computes the pseudo-inverse of matrix a with a specified tolerance for singular values.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.loadtxt(fname)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Loads data from a text file. fname is the name of the file to load. Example: np.loadtxt('data.txt') loads data from the file data.txt.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.max(x, [axis=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns the maximum value along an axis. Optionally, you can specify the axis. Example: np.max(x, axis=0) computes the maximum values along each column.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.mean(x, [axis=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Reduction; computes the mean over an array. Optionally only reduces over the specified axes. Example: np.mean(x, axis=1)</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.meshgrid(*xi, **kwargs)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns coordinate matrices from coordinate vectors. Example: X, Y = np.meshgrid(x, y) creates 2D grids of coordinates X and Y from 1D arrays x and y, respectively.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.min(x, [axis=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns the minimum value along an axis. Optionally, you can specify the axis. Example: np.min(x, axis=1) computes the minimum values along each row.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.nan[min, max, sum, prod, mean, cumsum, cumprod, argmin, argmax, std, median]</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns the minimum, maximum, etc. of an array ignoring NaN values. Example: np.nanmean(x) returns the mean of array x ignoring NaN values.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.nextafter(x1, x2)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns the next floating-point value after x1 towards x2. Example: np.nextafter(1.0, 2.0) returns the next floating-point value after 1.0 towards 2.0.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.nonzero(a)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Return the indices of the elements that are non-zero. Example: np.nonzero(x) returns a tuple of arrays representing the indices of non-zero elements in x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.ones(shape, [dtype=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns a new array of given shape and type, filled with ones. Example: np.ones((3, 2), dtype=float) creates a 3x2 array filled with ones.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.ravel(x)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns a flattened array containing the same elements as the input array. Example: np.ravel(x) returns a flattened version of array x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.repeat(a, repeats, [axis=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Repeats elements of an array. The repeats argument specifies the number of repetitions for each element. Optionally, you can specify the axis along which to repeat values. Example: np.repeat(x, 3, axis=1) repeats each column of x three times.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.reshape(x, newshape)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Gives a new shape to an array without changing its data. Example: np.reshape(x, (2, 3)) reshapes array x to a 2x3 matrix. Cannot change the total number of elements.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.rfft(x) and np.irfft(x)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Computes the one-dimensional discrete Fourier Transform for real input. Example: np.rfft(x) computes the one-dimensional discrete Fourier Transform of real array x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.savetxt(fname, x)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Saves an array to a text file. fname is the name of the file to save to. Example: np.savetxt('data.txt', x) saves array x to the file data.txt.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.searchsorted(a, v, [side=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Finds indices where elements should be inserted to maintain order. a is the input array and v is the values to insert. side specifies whether to return the first index (left) or last index (right) if the value is repeated. Example: np.searchsorted(a, v, side='left') returns the indices where values v should be inserted into array a to maintain order.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.seterr()</p>
+                </div>
+                <div class="bottom-half">
+                    <p> change trapping of floating point exceptions. Example: np.seterr(divide='ignore') ignores division by zero errors.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.sign(x)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns an array of the same shape as x with elements indicating the sign of each element in the input array. Positive elements are represented as 1, negative elements as -1, and zeros as 0. Example: np.sign(x) returns an array with the signs of elements in x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.sort(x, [axis=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns a sorted copy of an array. Optionally, you can specify the axis. Example: np.sort(x, axis=0) sorts each column of the array.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.squeeze(x, [axis=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Removes single-dimensional entries from the shape of an array. Optionally, you can specify the axis to remove particular dimensions. Example: np.squeeze(x, axis=1) removes the second dimension if it has size 1.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.stack(arrays, axis=)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Join arrays *of the same shapealong a new axis. Example: np.stack((x, y)) stacks arrays x and y and adds a new dimension at the front.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.std(x, [axis=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Computes the standard deviation along the specified axis. Example: np.std(x, axis=0) computes the standard deviation of each column of x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.sum(x, [axis=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Reduction; computes the sum over an array. Optionally only reduces over the specified axes. Example: np.sum(x, axis=0)</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.swapaxes(x, axis1, axis2)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Interchanges two axes of an array. Example: np.swapaxes(x, 0, 1) swaps the first and second axes of array x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.tile(x, reps)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Construct an array by repeating x the number of times given by reps. Example: np.tile(x, (2, 3)) creates a 2x3 tiling of x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.trace(a, [offset=, axis1=, axis2=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Computes the sum along diagonals of a square matrix. offset is an optional parameter specifying the diagonal in question (0 for the main diagonal). axis1 and axis2 specify the axes along which to compute the trace for higher-dimensional arrays. Example: np.trace(a, offset=1) computes the sum of elements above the main diagonal of the matrix a.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.transpose(x)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Reverses the dimensions of an array</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.unravel_index(indices, shape)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Converts a flat index or array of flat indices into a tuple of coordinate arrays. Example: np.unravel_index(22, (3, 4)) converts index 22 in a 3x4 array to coordinates (5, 2). Useful for converting argmin/argmax results to coordinates.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.where(condition, [x=, y=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Return elements chosen from x or y depending on the condition. If only condition is provided, it returns the indices where condition is True. If x and y are provided, it returns elements from x where condition is True, and from y where condition is False. Example: np.where(x > 0, x, 0) replaces negative elements in x with 0.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">np.zeros(shape, [dtype=])</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns a new array of given shape and type, filled with zeros. Example: np.zeros((2, 3), dtype=int) creates a 2x3 array filled with zeros.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">rng = np.random.default_rng()</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Creates a random number generator. Example: rng = np.random.default_rng() creates a random number generator rng.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">rng.normal(loc=, scale=, size=)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns an array of random samples from a normal distribution. loc specifies the mean, scale specifies the standard deviation, and size specifies the shape of the output array. Example: rng.normal(loc=0.0, scale=1.0, size=(2, 3)) returns a 2x3 array of samples from a standard normal distribution.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">rng.permutation(x)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Randomly permutes a sequence, or returns a permuted range. Example: rng.permutation(x) returns a randomly permuted version of array x.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">rng.randint(low=, high=, size=)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns an array of random integers from low (inclusive) to high (exclusive). size specifies the shape of the output array. Example: rng.randint(low=0, high=10, size=(2, 3)) returns a 2x3 array of random integers from 0 to 9.</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">rng.uniform(low=, high=, size=)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns an array of random samples from a uniform distribution. low specifies the lower bound, high specifies the upper bound, and size specifies the shape of the output array. Example: rng.uniform(low=-1.0, high=1.0, size=(2, 3)) returns a 2x3 array of samples from a uniform distribution over [-1, 1).</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">u, s, vt = np.linalg.svd(a)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Computes the singular value decomposition of a matrix.  Example: np.linalg.svd(a) returns the singular value decomposition of matrix a.</p>
+                </div>
+            </div>
         </div><div class="separator"> <div class="separator-text">Unit 01 Numerical</div></div><div class='card-container'>
             <div class="card">
                 <div class="top-half">
@@ -983,7 +1757,7 @@ $$\newcommand{\real}{\mathbb{R}}$$
         
             <div class="card">
                 <div class="top-half">
-                    <p class="card-title">Array Scanning</p>
+                    <p class="card-title">Array Scans</p>
                 </div>
                 <div class="bottom-half">
                     <p> Performing a cumulative operation on elements, building an array of partial results. Example: np.cumsum(array).</p>
@@ -1208,6 +1982,15 @@ $$\newcommand{\real}{\mathbb{R}}$$
         
             <div class="card">
                 <div class="top-half">
+                    <p class="card-title">np.nonzero(array)</p>
+                </div>
+                <div class="bottom-half">
+                    <p> Returns the indices of the elements that are non-zero (or True).</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
                     <p class="card-title">np.unravel_index(indices, shape)</p>
                 </div>
                 <div class="bottom-half">
@@ -1346,7 +2129,7 @@ $$\newcommand{\real}{\mathbb{R}}$$
                     <p class="card-title">C ordering (row-major)</p>
                 </div>
                 <div class="bottom-half">
-                    <p>arrays are stored in memory row by row, with the rightmost index changing fastest</p>
+                    <p>arrays are stored in memory "row by row", with the rightmost index changing fastest</p>
                 </div>
             </div>
         
@@ -1355,7 +2138,7 @@ $$\newcommand{\real}{\mathbb{R}}$$
                     <p class="card-title">Fortran ordering (column-major)</p>
                 </div>
                 <div class="bottom-half">
-                    <p>arrays are stored in memory column by column, with the leftmost index changing fastest</p>
+                    <p>arrays are stored in memory "column by column", with the leftmost index changing fastest</p>
                 </div>
             </div>
         
@@ -1401,15 +2184,6 @@ $$\newcommand{\real}{\mathbb{R}}$$
                 </div>
                 <div class="bottom-half">
                     <p>changing strides can modify the order in which array elements are accessed in memory</p>
-                </div>
-            </div>
-        
-            <div class="card">
-                <div class="top-half">
-                    <p class="card-title">C ordering in nested arrays</p>
-                </div>
-                <div class="bottom-half">
-                    <p>innermost arrays follow C ordering, useful for 2D arrays of varying sizes within a 3D array</p>
                 </div>
             </div>
         
@@ -1616,7 +2390,7 @@ $$\newcommand{\real}{\mathbb{R}}$$
                     <p class="card-title">NaN (Not a Number) bit pattern</p>
                 </div>
                 <div class="bottom-half">
-                    <p>In 64-bit float: [sign][all one exponent][non-zero mantiassa]</p>
+                    <p>In 64-bit float: [sign][all one exponent][non-zero mantissa]</p>
                 </div>
             </div>
         
@@ -1625,7 +2399,7 @@ $$\newcommand{\real}{\mathbb{R}}$$
                     <p class="card-title">Inf (Infinity) bit pattern</p>
                 </div>
                 <div class="bottom-half">
-                    <p>In 64-bit float: [sign][all one exponent][all zero mantiassa]</p>
+                    <p>In 64-bit float: [sign][all one exponent][all zero mantissa]</p>
                 </div>
             </div>
         
@@ -1658,24 +2432,6 @@ $$\newcommand{\real}{\mathbb{R}}$$
         
             <div class="card">
                 <div class="top-half">
-                    <p class="card-title">Bit pattern for signaling NaN</p>
-                </div>
-                <div class="bottom-half">
-                    <p>Specific bit patterns in NaN are designated for signaling NaNs, indicating errors when used in operations</p>
-                </div>
-            </div>
-        
-            <div class="card">
-                <div class="top-half">
-                    <p class="card-title">Bit pattern for quiet NaN</p>
-                </div>
-                <div class="bottom-half">
-                    <p>Quiet NaNs allow operations to continue without raising exceptions, ensuring smooth program execution</p>
-                </div>
-            </div>
-        
-            <div class="card">
-                <div class="top-half">
                     <p class="card-title">Reshape for Promotion</p>
                 </div>
                 <div class="bottom-half">
@@ -1688,7 +2444,7 @@ $$\newcommand{\real}{\mathbb{R}}$$
                     <p class="card-title">Squeeze for Reduction</p>
                 </div>
                 <div class="bottom-half">
-                    <p>Use np.squeeze() to remove single-dimensional entries from the shape of an array, reducing its dimensions.</p>
+                    <p>Use np.squeeze() to remove (all) single-dimensional entries from the shape of an array, reducing its dimensions. E.g. a (3,1,4,1) array becomes a (3,4) array.</p>
                 </div>
             </div>
         
@@ -1697,7 +2453,7 @@ $$\newcommand{\real}{\mathbb{R}}$$
                     <p class="card-title">Newaxis for Promotion</p>
                 </div>
                 <div class="bottom-half">
-                    <p>Use np.newaxis or None to add new dimensions, promoting arrays to higher dimensions.</p>
+                    <p>Use np.newaxis or None to add new dimensions, promoting arrays to higher dimensions. x[:, np.newaxis] promotes x from 1D to 2D.</p>
                 </div>
             </div>
         
@@ -1706,7 +2462,7 @@ $$\newcommand{\real}{\mathbb{R}}$$
                     <p class="card-title">None for Promotion</p>
                 </div>
                 <div class="bottom-half">
-                    <p>Using None in slicing/indexing adds a new axis, promoting arrays to higher dimensions.</p>
+                    <p>Using None in slicing/indexing adds a new axis, promoting arrays to higher dimensions. x[:, None] promotes x from 1D to 2D.</p>
                 </div>
             </div>
         
@@ -2729,6 +3485,42 @@ $$\newcommand{\real}{\mathbb{R}}$$
         
             <div class="card">
                 <div class="top-half">
+                    <p class="card-title">cosine similarity</p>
+                </div>
+                <div class="bottom-half">
+                    <p> the cosine of the angle between two vectors, i.e. the dot product of the vectors divided by the product of their norms (not the same as the angle!)</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">orthogonal vectors</p>
+                </div>
+                <div class="bottom-half">
+                    <p> vectors that are perpendicular to each other, i.e. their dot product is zero, at 90 degrees to each other </p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">unit vectors</p>
+                </div>
+                <div class="bottom-half">
+                    <p> vectors with norm 1 (in some specified norm)</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
+                    <p class="card-title">orthonormal vectors</p>
+                </div>
+                <div class="bottom-half">
+                    <p> some vectors $a,b,c,...$ that are (mutually) orthogonal and are all unit vectors</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
                     <p class="card-title">linear interpolation of two vectors</p>
                 </div>
                 <div class="bottom-half">
@@ -3020,7 +3812,7 @@ $$\newcommand{\real}{\mathbb{R}}$$
                     <p class="card-title">Linear transform</p>
                 </div>
                 <div class="bottom-half">
-                    <p> any linear map from $R^N$ to $R^N$ (i.e. where dimension isn unchanged)</p>
+                    <p> any linear map from $R^N$ to $R^N$ (i.e. where dimension is unchanged)</p>
                 </div>
             </div>
         
@@ -4937,7 +5729,7 @@ $$\newcommand{\real}{\mathbb{R}}$$
                     <p class="card-title">Hessian Matrix</p>
                 </div>
                 <div class="bottom-half">
-                    <p>matrix of second-order partial derivatives representing the curvature of a multivariable function</p>
+                    <p>matrix of second-order partial derivatives representing the curvature of a multivariable function. Used to classify critical points.</p>
                 </div>
             </div>
         
@@ -5063,7 +5855,7 @@ $$\newcommand{\real}{\mathbb{R}}$$
                     <p class="card-title">Automatic Differentiation</p>
                 </div>
                 <div class="bottom-half">
-                    <p>technique for efficiently and accurately evaluating derivatives of mathematical expressions, used in machine learning and scientific computing</p>
+                    <p>technique for efficiently and accurately evaluating derivatives of mathematical expressions in code, used in machine learning and scientific computing</p>
                 </div>
             </div>
         
@@ -5105,6 +5897,15 @@ $$\newcommand{\real}{\mathbb{R}}$$
         
             <div class="card">
                 <div class="top-half">
+                    <p class="card-title">grad()</p>
+                </div>
+                <div class="bottom-half">
+                    <p> an autograd function taking a (vector -> real) function as input and returning a (vector -> vector) function that computes the gradient of the input function</p>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="top-half">
                     <p class="card-title">Tape-based AD</p>
                 </div>
                 <div class="bottom-half">
@@ -5118,15 +5919,6 @@ $$\newcommand{\real}{\mathbb{R}}$$
                 </div>
                 <div class="bottom-half">
                     <p>static graphs (common in TensorFlow) define the computation graph before runtime, dynamic graphs (common in PyTorch) allow defining the graph as operations are executed</p>
-                </div>
-            </div>
-        
-            <div class="card">
-                <div class="top-half">
-                    <p class="card-title">Dual Numbers</p>
-                </div>
-                <div class="bottom-half">
-                    <p>extension of real numbers used in automatic differentiation, representing both the function value and its derivative in a single number</p>
                 </div>
             </div>
         
