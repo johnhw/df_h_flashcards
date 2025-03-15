@@ -27,7 +27,7 @@ Vectorization; The process of applying operations element-wise to entire arrays,
 SIMD (Single Instruction, Multiple Data); A parallel processing technique where a single instruction is applied to multiple data elements simultaneously.
 Broadcasting; A set of rules for performing element-wise operations on arrays of different shapes during vectorized computations.
 Element-wise Operation; An operation performed independently on each element of an array.
-Corresponding element; In a binary elementwise operation on A and B, the element of A at a given index is combined with the element of B at the same index.
+Corresponding element; In a binary element-wise operation on A and B, the element of A at a given index is combined with the element of B at the same index.
 Dot Product; A mathematical operation that calculates the sum of products of corresponding elements of two arrays.
 Vector; A one-dimensional array representing a list of scalar values.
 Matrix; A two-dimensional array with rows and columns used for mathematical operations.
