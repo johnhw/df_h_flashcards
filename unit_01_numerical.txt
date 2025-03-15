@@ -75,7 +75,7 @@ np.sum(array, axis=None); Calculates the sum of array elements along the specifi
 np.std(array, axis=None); Computes the standard deviation along the specified axis or the flattened array.
 np.argmin(array, axis=None); Returns the indices of the minimum values along the specified axis or flattened array.
 np.argmax(array, axis=None); Returns the indices of the maximum values along the specified axis or flattened array.
-np.argsort(array, axis=-1); Returns the indices that would sort the array along the specified axis.
+np.argsort(array, axis=-1); Returns the indices that would sort the array along the last dimension in a tensor.
 np.where(condition, [x, y]); Returns elements chosen from x or y depending on the condition.
 np.unique(array); Finds the unique elements of an array and returns them in sorted order.
 np.clip(array, a_min, a_max); Clips the values in an array to be within a specified range.
