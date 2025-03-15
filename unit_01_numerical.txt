@@ -51,7 +51,7 @@ np.empty((3, 3));creates an uninitialized 3x3 array, often filled with garbage v
 np.arange(12).reshape(3, 4);creates a 3x4 array and reshapes it, [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11]]
 Scalar Broadcasting; Broadcasting a scalar to an array, applying the scalar to every element.
 Shape Compatibility; Arrays are broadcastable if their shapes are compatible or if one of them is a scalar.
-Broadcasting compatibility rule; A+B is okay if; B is scalar; A.shape==B.shape; or A.shape[:-n]==B.shape[:-n] for some n.
+Broadcasting compatibility rule; A+B is okay if, B is scalar or A.shape==B.shape or A.shape[:-n]==B.shape[:-n] for some n.
 Broadcastable Dimensions; Dimensions are broadcastable if they are equal or one of them is 1.
 Broadcastable array shape; (3, 1, 4) and (1, 4) are broadcastable, resulting in shape (3, 1, 4) after broadcasting.
 Broadcastable array shape; (2, 3) and (3,) are broadcastable, resulting in shape (2, 3) after broadcasting.
