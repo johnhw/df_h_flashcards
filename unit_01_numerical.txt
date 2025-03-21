@@ -6,7 +6,7 @@ array.ndim;returns the number of dimensions of an array, e.g., 3
 np.array([1, 2, 3]).dtype;returns the datatype of elements, e.g., float64
 array[:, 1];selects the second column of a 2D array
 array[1, -1];selects the last element of the second row in a 2D array
-array[array > 5];filters elements greater than 5 in an array
+array[array > 5];filters elements greater than 5 in an array, creating a flattened array with the filtered values
 np.concatenate((array1, array2), axis=0);concatenates arrays vertically
 np.stack((array1, array2), axis=1);stacks arrays horizontally with explicit axis
 np.tile(array, (2, 3));tiles the array into a 2x3 grid
@@ -43,15 +43,15 @@ Shape; Describes the size of each dimension in an array, e.g., (3, 4) for a 2D a
 np.zeros((2, 3), dtype=np.float64);creates a 2x3 array filled with zeros of dtype float64
 np.ones((3, 3), dtype=np.int32);creates a 3x3 array filled with ones of dtype int32
 np.full((2, 2), 7.5);creates a 2x2 array filled with 7.5
-np.arange(0, 10, 2);creates an array from 0 to 10 with a step of 2, [0, 2, 4, 6, 8]
-np.linspace(0, 1, 5);creates an array of 5 evenly spaced values between 0 and 1, [0.0, 0.25, 0.5, 0.75, 1.0]
+np.arange(0, 10, 2);creates an array from 0 to 10 (exclusive) with a step of 2, [0, 2, 4, 6, 8]
+np.linspace(0, 1, 5);creates an array of 5 evenly spaced values between 0 and 1 (inclusive), [0.0, 0.25, 0.5, 0.75, 1.0]
 np.eye(3);creates a 3x3 identity matrix, where diagonal elements are 1 and others are 0
 np.random.rand(2, 2);creates a 2x2 array with random values between 0 and 1
 np.empty((3, 3));creates an uninitialized 3x3 array, often filled with garbage values
 np.arange(12).reshape(3, 4);creates a 3x4 array and reshapes it, [[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11]]
 Scalar Broadcasting; Broadcasting a scalar to an array, applying the scalar to every element.
 Shape Compatibility; Arrays are broadcastable if their shapes are compatible or if one of them is a scalar.
-Broadcasting compatibility rule; A+B is okay if; B is scalar; A.shape==B.shape; or A.shape[:-n]==B.shape[:-n] for some n.
+Broadcasting compatibility rule; A+B is okay if, B is scalar or A.shape==B.shape or A.shape[:-n]==B.shape[:-n] for some n.
 Broadcastable Dimensions; Dimensions are broadcastable if they are equal or one of them is 1.
 Broadcastable array shape; (3, 1, 4) and (1, 4) are broadcastable, resulting in shape (3, 1, 4) after broadcasting.
 Broadcastable array shape; (2, 3) and (3,) are broadcastable, resulting in shape (2, 3) after broadcasting.
@@ -75,7 +75,7 @@ np.sum(array, axis=None); Calculates the sum of array elements along the specifi
 np.std(array, axis=None); Computes the standard deviation along the specified axis or the flattened array.
 np.argmin(array, axis=None); Returns the indices of the minimum values along the specified axis or flattened array.
 np.argmax(array, axis=None); Returns the indices of the maximum values along the specified axis or flattened array.
-np.argsort(array, axis=-1); Returns the indices that would sort the array along the specified axis.
+np.argsort(array, axis=-1); Returns the indices that would sort the array along the last dimension in a tensor.
 np.where(condition, [x, y]); Returns elements chosen from x or y depending on the condition.
 np.unique(array); Finds the unique elements of an array and returns them in sorted order.
 np.clip(array, a_min, a_max); Clips the values in an array to be within a specified range.
