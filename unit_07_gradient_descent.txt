@@ -12,7 +12,7 @@ Learning Rate Schedules;techniques like step decay or exponential decay that gra
 Critical point;point where the gradient is zero, indicating a potential minimum, maximum, or saddle point
 Local Minimum;critical point where the function has lower values than its surrounding points, indicating a potential lowest point in the local vicinity
 Local Maximum;critical point where the function has higher values than its surrounding points, indicating a potential highest point in the local vicinity
-Saddle Point;critical point where the function is neither a minimum nor a maximum, but the gradient is zero; can be a peak in one direction and a valley in another
+Saddle Point;critical point where the function is neither a minimum nor a maximum, but the gradient is zero. can be a peak in one direction and a valley in another
 Ridge Point;critical point where the function has higher values in multiple directions and lower values in orthogonal directions
 Plateau Point;critical point where the function has a flat region, making it challenging to determine the nature of the critical point
 Global Minimum;critical point where the function has the absolute lowest value over its entire domain, indicating the overall minimum point
