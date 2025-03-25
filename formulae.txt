@@ -22,7 +22,7 @@ Linear system \(Ax = y\);$$ A\vec{x} = \vec{y} $$
 SVD definition;$$ A = U \Sigma V $$
 (pseudo-)inverse by SVD;$$ A^{-1} = V^T \Sigma^\dagger U^T $$
 Definition of optimization;$$ \theta^* = \argmin{\theta\in\Theta} L(\theta) $$
-Objective function for approximation;$$ L(\theta) = \|y^\prime - y\| = \|f(\vec{x};\theta) - y\| $$
+Objective function for approximation;$$ L(\theta) = \|y^\prime - y\| = \|f(\vec{x}.\theta) - y\| $$
 Equality constraints for optimization;$$ \theta^t = \argmin{\theta\in\Theta} L(\theta) \text{ subject to } c(\theta)=0 $$
 Inequality constraints for optimization;$$ \theta^* = \argmin{\theta\in\Theta} L(\theta) \text{ subject to } c(\theta)\leq0 $$
 Gradient of a function;$$ \nabla L(\vec{\theta}) = \left[ \frac{\partial L(\vec{\theta})}{\partial \theta_1}, \frac{\partial L(\vec{\theta})}{\partial \theta_2}, \dots, \frac{\partial L(\vec{\theta})}{\partial \theta_n} \right] $$

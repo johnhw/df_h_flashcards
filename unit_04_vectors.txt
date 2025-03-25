@@ -60,15 +60,15 @@ Scalar Multiplication Property of Linear Maps; for any scalar c and vector v, T(
 Preservation of Origin; linear maps always map the origin to the origin: T(0) = 0
 Preservation of Lines; linear maps transform lines in the input space to lines in the output space
 Rotation matrix; matrix representing a rotation in space, i.e. a linear map that rotates vectors by a specified angle without scaling 
-Scale matrix; matrix representing a scaling in space, i.e. a linear map that scales vectors by a specified factor without rotating; always diagonal 
+Scale matrix; matrix representing a scaling in space, i.e. a linear map that scales vectors by a specified factor without rotating. always diagonal 
 Skew matrix; matrix representing a skew in space, i.e. a linear map that shears vectors
 Definition of Matrices in R^(MxN); matrices are rectangular arrays of real numbers with M rows and N columns
 Matrix Multiplication (AB); operation resulting in a new matrix C, where C[i, j] is the dot product of the ith row of A and jth column of B
 Associative Property of Matrix Multiplication; (AB)C = A(BC), allowing the grouping of matrix multiplication operations
 Non-Commutative Property of Matrix Multiplication; in general, AB ≠ BA for matrices A and B
-Identity Matrix (I); a square matrix where all elements on the main diagonal are 1 and all other elements are 0; AI = A and IA = A. Has no effect on a vector when multiplied by it
+Identity Matrix (I); a square matrix where all elements on the main diagonal are 1 and all other elements are 0. AI = A and IA = A. Has no effect on a vector when multiplied by it
 Effect of Multiplying by Identity Matrix; any matrix multiplied by the identity matrix remains unchanged
-Zero Matrix (0); a matrix where all elements are 0; A0 = 0 for any matrix A, maps all vectors to the origin
+Zero Matrix (0); a matrix where all elements are 0. A0 = 0 for any matrix A, maps all vectors to the origin
 Matrix Multiplication by Zero Matrix; the result is always the zero matrix: A0 = 0
 Diagonal of a Matrix; the elements from the top left to the bottom right of a square matrix, elements A[i,i], (the "main diagonal")
 Anti-diagonal of a Matrix; the elements from the top right to the bottom left of a square matrix, elements A[i, N-i+1]
@@ -77,7 +77,7 @@ Off-diagonal; all elements of a matrix that are not on the main diagonal
 Upper Triangular Matrix; a square matrix where all elements below the main diagonal are zero
 Lower Triangular Matrix; a square matrix where all elements above the main diagonal are zero
 Square Matrix; a matrix with the same number of rows and columns (NxN)
-Properties of square matrix; *may* have an inverse; has an eigenvalue decomposition; has a determinant 
+Properties of square matrix; *may* have an inverse. has an eigenvalue decomposition; has a determinant 
 Symmetric Matrix; a square matrix that is equal to its transpose: A^T = A. The diagonal elements are symmetric about the main diagonal
 Skew-Symmetric (Anti-symmetric) Matrix; a square matrix where the transpose equals the negative of the matrix: A^T = -A
 Orthogonal Matrix; a square matrix where the rows and columns are orthonormal unit vectors

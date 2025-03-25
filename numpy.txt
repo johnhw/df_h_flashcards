@@ -51,7 +51,7 @@ np.linalg.norm(x, [ord=, axis=]); Computes the norm of a vector or matrix. ord s
 np.linalg.pinv(a); Computes the (Moore-Penrose) pseudo-inverse of a matrix. rcond is an optional parameter specifying the singular values below which singular values are considered zero. Example: np.linalg.pinv(a, rcond=1e-15) computes the pseudo-inverse of matrix a with a specified tolerance for singular values.
 np.loadtxt(fname); Loads data from a text file. fname is the name of the file to load. Example: np.loadtxt('data.txt') loads data from the file data.txt.
 np.max(x, [axis=]); Returns the maximum value along an axis. Optionally, you can specify the axis. Example: np.max(x, axis=0) computes the maximum values along each column.
-np.mean(x, [axis=]); Reduction; computes the mean over an array. Optionally only reduces over the specified axes. Example: np.mean(x, axis=1)
+np.mean(x, [axis=]); Reduction. computes the mean over an array. Optionally only reduces over the specified axes. Example: np.mean(x, axis=1)
 np.meshgrid(*xi, **kwargs); Returns coordinate matrices from coordinate vectors. Example: X, Y = np.meshgrid(x, y) creates 2D grids of coordinates X and Y from 1D arrays x and y, respectively.
 np.min(x, [axis=]); Returns the minimum value along an axis. Optionally, you can specify the axis. Example: np.min(x, axis=1) computes the minimum values along each row.
 np.nan[min, max, sum, prod, mean, cumsum, cumprod, argmin, argmax, std, median]; Returns the minimum, maximum, etc. of an array ignoring NaN values. Example: np.nanmean(x) returns the mean of array x ignoring NaN values.
@@ -70,7 +70,7 @@ np.sort(x, [axis=]); Returns a sorted copy of an array. Optionally, you can spec
 np.squeeze(x, [axis=]); Removes single-dimensional entries from the shape of an array. Optionally, you can specify the axis to remove particular dimensions. Example: np.squeeze(x, axis=1) removes the second dimension if it has size 1.
 np.stack(arrays, axis=); Join arrays *of the same shapealong a new axis. Example: np.stack((x, y)) stacks arrays x and y and adds a new dimension at the front.
 np.std(x, [axis=]); Computes the standard deviation along the specified axis. Example: np.std(x, axis=0) computes the standard deviation of each column of x.
-np.sum(x, [axis=]); Reduction; computes the sum over an array. Optionally only reduces over the specified axes. Example: np.sum(x, axis=0)
+np.sum(x, [axis=]); Reduction. computes the sum over an array. Optionally only reduces over the specified axes. Example: np.sum(x, axis=0)
 np.swapaxes(x, axis1, axis2); Interchanges two axes of an array. Example: np.swapaxes(x, 0, 1) swaps the first and second axes of array x.
 np.tile(x, reps); Construct an array by repeating x the number of times given by reps. Example: np.tile(x, (2, 3)) creates a 2x3 tiling of x.
 np.trace(a, [offset=, axis1=, axis2=]); Computes the sum along diagonals of a square matrix. offset is an optional parameter specifying the diagonal in question (0 for the main diagonal). axis1 and axis2 specify the axes along which to compute the trace for higher-dimensional arrays. Example: np.trace(a, offset=1) computes the sum of elements above the main diagonal of the matrix a.

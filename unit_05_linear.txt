@@ -27,12 +27,12 @@ Interpretation of an eigenvalue; Eigenvalues represent the scaling factor by whi
 Trace of a matrix; Trace of a square matrix A, denoted as tr(A), is the sum of its diagonal elements *and* the sum of its eigenvalues.
 Determinant; The determinant of a matrix A, det(A), is equal to the product of its eigenvalues. det(A) = λ1 * λ2 * ... * λn, where λ1, λ2, ..., λn are the eigenvalues of A.
 Geometric interpretation of the determinant; The determinant of a matrix A is equal to the area of the parallelogram spanned by its column vectors. Alternatively, how much space is "squished/expanded" by the transformation represented by A.
-Singular; A matrix is singular if det(A)=0; it collapses a dimension and thus cannot be inverted.
+Singular; A matrix is singular if det(A)=0. it collapses a dimension and thus cannot be inverted.
 Non-singular; A matrix that *can* be inverted, with det(A)!=0. Every dimension is preserved. 
 Power iteration method; Power iteration is an iterative algorithm used to find the leading eigenvalue and corresponding eigenvector of a matrix. It involves repeated multiplication of the matrix with a vector and normalization to converge towards the dominant eigenpair.
 Eigenpair; An eigenpair is a pair of an eigenvalue and its corresponding eigenvector.
 Eigendecomposition; Eigendecomposition is the factorization of a matrix into a set of eigenvectors and eigenvalues. 
-Geometric interpretation of eigenvalues; Eigenvalues represent the scaling factor by which a matrix transforms an eigenvector. If λ > 1, the eigenvalue stretches the vector; if 0 < λ < 1, it compresses the vector; if λ < 0, it reflects the vector.
+Geometric interpretation of eigenvalues; Eigenvalues represent the scaling factor by which a matrix transforms an eigenvector. If λ > 1, the eigenvalue stretches the vector. if 0 < λ < 1, it compresses the vector; if λ < 0, it reflects the vector.
 Geometric interpretation of singularity; A matrix is singular if and only if its determinant is zero. Geometrically, this means the matrix collapses the space along at least one dimension, resulting in a flat or lower-dimensional transformation.
 Real eigenvalues; Symmetric square matrices always have real eigenvalues and orthogonal eigenvectors. 
 Complex eigenvalues; Complex eigenvalues in a matrix indicate oscillatory behavior in dynamic systems (e.g. in a flow on a graph). When eigenvalues have imaginary parts, the system exhibits periodic or oscillatory motion.
@@ -40,7 +40,7 @@ Relation between trace and eigenvalues; The sum of eigenvalues of a matrix A is 
 Relation between determinant and eigenvalues; The determinant of a matrix A is equal to the product of its eigenvalues: det(A) = λ1 * λ2 * ... * λn, where λ1, λ2, ..., λn are the eigenvalues of A.
 Principal Component Analysis (PCA); PCA is a technique used for dimensionality reduction and data compression. It identifies the principal components (eigenvectors) of a the covariance matrix of a dataset, reducing its dimensions while retaining most of the original variance.
 Eigenvalue Decomposition in PCA; PCA involves computing the eigenvalue decomposition of the covariance matrix of the data. 
-Eigenspectrum; The eigenspectrum represents the distribution of eigenvalues; the eigenvalues ranked by absolute magnitude. Large eigenvalues indicate significant variance in the data, while small eigenvalues represent noise or less important features.
+Eigenspectrum; The eigenspectrum represents the distribution of eigenvalues. the eigenvalues ranked by absolute magnitude. Large eigenvalues indicate significant variance in the data, while small eigenvalues represent noise or less important features.
 Principal Components; Principal components are the eigenvectors of the covariance matrix. They form a new orthogonal basis for the data, with the first principal component capturing the most variance, the second capturing the second most, and so on.
 Variance explained by Principal Components; Each principal component explains a certain percentage of the total variance in the data. The ratio of the eigenvalue of a principal component to the sum of all eigenvalues indicates the proportion of variance it represents.
 Dimensionality reduction; The process of finding a low-dimensional representation of a dataset that preserves most of its important features. It is useful for visualisation and speeding up machine learning algorithms.
